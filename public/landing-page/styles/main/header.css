@@ -1,0 +1,168 @@
+header{
+    background-color: #004F80;
+    padding: 0.5rem 10px;
+    --logo-w:max-content;
+    --btn-font-size:1.25rem;
+    --nav-bottom-jt:left;
+    --nav-bottom-mg:0px 2.8rem;
+    --nav-bottom-fs:16px;
+    --brand-gap: 10px;
+    box-shadow: 2px 2px 2px 1px #00426A;
+}
+
+@media (min-width: 1px) and (max-width: 319px){
+    header{
+        --logo-w:170px;
+        --btn-font-size: 0.7rem;
+        --nav-bottom-fs:12px;
+        --nav-bottom-mg:0px 0.2rem;
+        --btn-font-size: 0.8rem;
+        --nav-bottom-jt:center;
+        --btn-font-size: 0.6rem;
+    }
+}
+
+@media (min-width: 320px)  and (max-width: 419px){ 
+    header{
+        --logo-w:170px;
+        --nav-bottom-fs:12px;
+        --nav-bottom-mg:0px 0.7rem;
+        --btn-font-size: 0.6rem;
+        --nav-bottom-jt:center;
+        --brand-gap:1px;
+    }
+
+}
+
+@media (min-width: 420px)  and (max-width: 550px){ 
+    header{
+        --logo-w:200px; 
+        --nav-bottom-fs:14px;
+        --nav-bottom-mg:0px 0.6rem;
+        --nav-bottom-jt:center;
+    }
+    .nav-right button{
+        --btn-font-size: 0.9rem;
+    }
+}
+
+
+@media (min-width: 551px)  and (max-width: 575px){ 
+    header{
+        --logo-w:250px; 
+        --nav-bottom-mg:0px 1rem;
+        --nav-bottom-jt:center;
+    }
+    .nav-right button{
+        --btn-font-size: 0.9rem;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 764px) { 
+    header{
+        --logo-w:250px; 
+        --nav-bottom-mg:0px 1.8rem;
+        --nav-bottom-jt:center;
+    }
+    .nav-right button{
+        --btn-font-size: 0.9rem;
+    }
+}
+
+@media (min-width: 765px) and (max-width: 867px) { 
+    header{
+        --logo-w:250px;
+        --nav-bottom-mg:0px 1.8rem;
+    }
+    .nav-right button{
+        --btn-font-size: 1.0rem;
+    }
+}
+
+@media (min-width: 868px) and (max-width: 962px) { 
+    header{
+        --logo-w:250px; 
+        --nav-bottom-mg:0px 1.8rem;
+    }
+    .nav-right button{
+        --btn-font-size: 1.1rem;
+    }
+}
+
+@media (min-width:963px) and (max-width: 1022px)  { 
+    header{
+        --logo-w:250px; 
+        --nav-bottom-mg:0px 1.8rem;
+    }
+    .nav-right button{
+        --btn-font-size: 1.1rem;
+    }
+
+}
+
+@media (min-width: 1023px) and (max-width: 1399px) { 
+    header{
+        --logo-w:250px; 
+        --nav-bottom-mg:0px 2rem;
+    }
+}
+
+@media (min-width: 1400px) {
+    header{
+        --logo-w:250px; 
+    }
+}
+
+.nav{
+    display: grid;
+    grid-template-areas:
+    "nav-left nav-right"
+    "divider divider"
+    "nav-bottom nav-bottom";
+    align-items: center;
+    grid-template-columns: var(--logo-w) 1fr;
+    grid-row-gap: 10px;
+}
+
+.nav-left{
+    grid-area: nav-left;
+    justify-self: left;
+    display:grid;
+    grid-auto-flow: column;
+    align-items: center;
+    align-content: center;
+    grid-gap: var(--brand-gap);
+}
+.nav-left .navbar-burger{
+    color:white;
+}
+.nav-left .navbar-burger:hover{
+    background-color: rgba(250,250,250,0.2);
+}
+.nav-right{
+    grid-area: nav-right;
+    justify-self: right;
+    
+}
+.nav-right button{
+    font-size:var(--btn-font-size)!important;
+}
+.nav-bottom{
+    grid-area: nav-bottom;
+    display:grid;
+    justify-content: var(--nav-bottom-jt);
+    
+}
+.nav-bottom div{
+    display: inline-grid;
+    grid-auto-flow: column;
+}
+
+
+.nav-bottom a{
+   margin:var(--nav-bottom-mg);
+    font-size:var(--nav-bottom-fs);
+    color: white;
+}
+
+

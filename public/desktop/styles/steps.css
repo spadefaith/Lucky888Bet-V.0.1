@@ -1,0 +1,80 @@
+.step-form{
+    display:grid;
+    align-items: center;
+}
+.step-form .breadcrumb .breadcrumb-item{
+    display:grid;
+    grid-auto-flow: column;
+    position:relative;
+}
+.step-form .breadcrumb .breadcrumb-item div{
+    display:grid;
+    
+}
+
+.breadcrumb-item + .breadcrumb-item::before{
+    content:"";
+};
+
+/* .chevron{
+    background-image: url('../image/icon/chevron.png');
+} */
+
+.chevron {
+    position:absolute;
+    top:-2px;
+    right:-13px;
+    z-index:1;
+    display:block;
+    border:24px solid transparent;
+    border-right:0;
+    border-left:14px solid #ccc;
+}
+.chevron:before {
+    position:absolute;
+    top:-24px;
+    right:1px;
+    display:block;
+    border:24px solid transparent;
+    border-right:0;
+    border-left:14px solid #fff;
+    content:"";
+    -webkit-transition:all 400ms ease-in-out;
+    -moz-transition:all 400ms ease-in-out;
+    -ms-transition:all 400ms ease-in-out;
+    -o-transition:all 400ms ease-in-out;
+    transition:all 400ms ease-in-out
+}
+.chevron:before {
+    border-left:14px solid #e4f0ff
+}
+
+/* .chevron {
+    position:absolute;
+    top:-2px;
+    right:-13px;
+    z-index:1;
+    display:block;
+    border:24px solid transparent;
+    border-right:0;
+    border-left:14px solid #ccc
+} */
+
+/* .chevron:before {
+    position:absolute;
+    top:-24px;
+    right:1px;
+    display:block;
+    border:24px solid transparent;
+    border-right:0;
+    border-left:14px solid #fff;
+    content:"";
+    -webkit-transition:all 400ms ease-in-out;
+    -moz-transition:all 400ms ease-in-out;
+    -ms-transition:all 400ms ease-in-out;
+    -o-transition:all 400ms ease-in-out;
+    transition:all 400ms ease-in-out
+}
+.chevron:before {
+    border-left:14px solid #e4f0ff
+} */

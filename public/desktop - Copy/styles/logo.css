@@ -1,0 +1,37 @@
+@media (max-width: 575px) { 
+    .logo-top-left{
+        width: 150px;
+    }
+}
+
+@media (min-width: 576px) { 
+    .logo-top-left{
+        width: 150px;
+    }
+}
+@media (min-width: 768px) { 
+    .logo-top-left{
+        width: 180px;
+    }
+}
+
+
+@media (min-width:922px) { 
+    .logo-top-left{
+        width: 200px;
+    }
+}
+
+
+@media (min-width: 1200px) { 
+    .logo-top-left{
+        width: 210px;
+    }
+ }
+
+
+@media (min-width: 1400px) {
+    .logo-top-left{
+        width: 240px;
+    }
+}

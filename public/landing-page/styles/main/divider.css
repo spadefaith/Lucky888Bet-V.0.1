@@ -1,0 +1,55 @@
+.divider{
+    display:block;
+    height: 1px;
+    background-color:rgba(254,254,254,0.2);
+    width: 100%;
+    grid-area: divider;
+    
+    
+    
+}
+
+.divider-name{
+    --name-fs: 42px;
+}
+
+
+@media (max-width: 320px) { 
+    .divider-name{
+        --name-fs: 30px;
+    }
+}
+
+
+@media (min-width:321px) and (max-width: 420px) { 
+    .divider-name{
+        --name-fs: 32px;
+    }
+}
+
+@media (min-width:421px) and (max-width: 576px) { 
+    .divider-name{
+        --name-fs: 38px;
+    }
+}
+
+@media (min-width:577px) and (max-width: 765px) { 
+    .divider-name{
+        --name-fs: 40px;
+    }
+}
+
+.divider-grp{
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    align-items: center;
+    grid-gap: 1rem;
+    padding:83px 0px 0px;
+}
+.divider-grp .divider{
+    grid-area: unset;
+}
+.divider-name{
+    font-size:var(--name-fs);
+    color:black;
+}

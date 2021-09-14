@@ -1,0 +1,28 @@
+.dropdown-container{
+    --img-width: 100px;
+}
+.dropdown-container>.nav-dropdown{
+    z-index: 100;
+    background-color: rgba(254,254,254,0.3);
+    padding: 1rem 1rem 2rem;
+}
+.dropdown-container.is-active{
+    
+}
+.dropdown-content{
+    
+}
+
+.dropdown-container .nav-dropdown a{
+
+}
+.dropdown-container img{
+    width: 100px;
+}
+
+.dropdown-container .nav-dropdown{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); 
+    grid-gap: 2rem;
+    justify-items: center;
+}

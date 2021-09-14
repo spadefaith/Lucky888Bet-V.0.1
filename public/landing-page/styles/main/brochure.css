@@ -1,0 +1,9 @@
+.main-container .game-brochure{
+    padding-top:126px;
+    display: grid;
+    grid-gap: 45px
+}
+.main-container .game-brochure .game-brochure-name{
+    display: inline-grid;
+    grid-auto-flow: column;
+}

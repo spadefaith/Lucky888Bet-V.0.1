@@ -1,0 +1,40 @@
+@media screen and (max-width:1023px){
+    main{
+      margin-top: 86px!important;
+    }
+    .carousel .splide__track,
+    .carousel .splide__slide,
+    .carousel.splide{
+        max-height: 312px!important;
+    }
+    .carousel img{
+        max-height: 312px;
+        min-height: 312px;
+        object-fit:fill;
+        width: 100vw;
+    }
+    .carousel img{
+        height: unset;
+        width:100vw;
+    }
+    .grid-slide-responsive{
+        padding-left: 1.5rem!important;
+        padding-right: 1.5rem!important;
+    }
+}
+
+
+@media screen and (max-width:955px){
+
+    .grid-slide-responsive .splide__track,
+    .grid-slide-responsive .splide__slide,
+    .grid-slide-responsive .splide,
+    .grid-slide-responsive figure{
+        max-height: 300px!important;
+        max-width: 250px!important;
+        grid-template-columns: repeat(auto-fit, minmax(251px, 1fr));
+        display: grid;
+        grid-gap: 1rem;
+    }   
+  
+}

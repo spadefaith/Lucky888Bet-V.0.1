@@ -1,0 +1,60 @@
+body{
+    background-color:#0099ff;
+
+    overflow-x: hidden;
+}
+.main-container{
+    padding-top:56px;
+}
+.main-container .banner{
+    display: grid;
+    justify-content: center;
+    grid-gap: 4px;
+    
+}
+
+.main-container .banner .banner-middle{
+    padding-bottom: 150px;
+}
+
+
+
+
+
+.category-container{
+    background-color: white;
+}
+
+
+
+.main-container .main-bottom{
+    padding-top: 76px;
+    padding-bottom: 108px;
+}
+
+
+
+
+.main-middle{
+    background: url('../images/background.png');
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+.shadow{
+    box-shadow: 0px 2px 5px 4px gray;
+}
+
+.modal{
+    z-index: 10000000;
+}
+.pop-container{
+    position: relative;
+}
+.pop-container .buttons{
+    position: absolute;
+    bottom:98px;
+    display: block;
+    width: 90%;
+    text-align: center;
+}

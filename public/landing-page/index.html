@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#203E3C">
+    <!-- <meta property="og:locale" content="en_US">
+    <meta property="og:url"                content="https://luckybet888.herokuapp.com/" />
+    <meta property="og:type"               content="website" />
+    <meta property="og:title"              content="Lucky 888 Bet" />
+    <meta property="og:description"        content="A website where you can play legal betting games and win" />
+    <meta property="og:image"              content="https://luckybet888.herokuapp.com/image/logo/logo-md.png" />
+
+
+    <meta name="twitter:card" content="summary_large_image">
+    
+    
+    
+    <meta property="og:site_name" content="Lucky 888 Bet">
+    <meta name="twitter:image:alt" content="Alt text for image">
+    <meta name="twitter:image" content="https://luckybet888.herokuapp.com/image/logo/logo-md.png">
+    
+    
+    
+    <meta name='twitter:name' content='Lucky 888 Bet'>
+    <meta name='twitter:description' content='A website where you can play legal betting games and win'> -->
+
+
+    <title>Lucky 888 Bet</title>
+    <style>
+
+.loader-container{
+        margin:0;
+        padding:0;
+        background:rgb(0,0,0);
+        position: fixed;
+        top:0;
+        bottom:0;
+        left:0;
+        right:0;
+        z-index: 5000;
+                height: 100%;
+                 display:grid;
+                 place-content: center;
+        }
+        .loader-spinner ul{
+            
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-50%);
+        margin:0;
+        padding:0;
+        display:flex;
+        
+        }
+        .loader-spinner  ul li{
+        list-style:none;
+        width:40px;
+        height:40px;
+        background:#fff;
+        border-radius:50%;
+        animation:grow 1.6s ease-in-out infinite;
+        }
+        @keyframes grow
+        {
+            0% , 40% , 100%
+            {
+            transform:scale(0.2);
+            }
+            20%{
+            transform:scale(1);
+
+            }
+        }
+
+        .loader-spinner  ul li:nth-child(1){
+        animation-delay:-1.4s;
+        background:#ffff00;
+        box-shadow:0 0 50px #ffff00;
+        
+        }
+        .loader-spinner  ul li:nth-child(2){
+        animation-delay:-1.2s;
+        background:#76ff03;
+        box-shadow:0 0 50px #76ff03;
+        
+        }
+        .loader-spinner  ul li:nth-child(3){
+        animation-delay:-1s;
+        background:#f06292;
+        box-shadow:0 0 50px #f06292;
+        
+        }
+        .loader-spinner  ul li:nth-child(4){
+        animation-delay:-0.8s;
+        background:#4fc3f7;
+        box-shadow:0 0 50px #4fc3f7;
+        
+        }
+        .loader-spinner  ul li:nth-child(5){
+        animation-delay:-0.6s;
+        background:#ba68c8;
+        box-shadow:0 0 50px #ba68c8;
+        
+        }
+        .loader-spinner  ul li:nth-child(6){
+        animation-delay:-0.4s;
+        background:#f57c00;
+        box-shadow:0 0 50px #f57c00;
+        
+        }
+        .loader-spinner  ul li:nth-child(7){
+        animation-delay:-0.2s;
+        background:#673ab7;
+        box-shadow:0 0 50px #673ab7;
+        
+        }
+    
+    
+    
+    </style>
+
+    <!-- <link rel="shortcut icon" type="image/png" href="./image/logo/logo-sm.png"/> -->
+
+
+    <link rel="stylesheet" href="./packages/bulma.min.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.21/dist/css/splide.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hover.css@2.3.2/css/hover.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--script on load-->
+
+    <!-- <script src='./scripts/custom.js'></script> -->
+
+
+    <!--styles-->
+    <link rel='stylesheet' href='./styles/main/divider.css'>
+    <link rel='stylesheet' href='./styles/main/main-category.css'>
+    <link rel='stylesheet' href='./styles/main/main-sign-up.css'>
+    <link rel='stylesheet' href='./styles/main/main-terms.css'>
+    <link rel='stylesheet' href='./styles/main/main-contact.css'>
+    <link rel='stylesheet' href='./styles/main/main-banner.css'>
+    <link rel='stylesheet' href='./styles/main/footer-first.css'>
+    <link rel='stylesheet' href='./styles/main/footer-second.css'>
+    <link rel='stylesheet' href='./styles/main/footer-third.css'>
+    <link rel='stylesheet' href='./styles/main/footer-fourth.css'>
+    <link rel='stylesheet' href='./styles/main/footer-fifth.css'>
+
+
+    <link rel='stylesheet' href='./styles/main/header.css'>
+    <link rel='stylesheet' href='./styles/main/logo.css'>
+    <link rel='stylesheet' href='./styles/main.css'>
+    <link rel='stylesheet' href='./styles/main/brochure.css'>
+    <link rel='stylesheet' href='./styles/main/footer.css'>
+    <link rel='stylesheet' href='./styles/main/sidebar.css'>
+    <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=27475616-9fe3-47a6-aaa2-e106f0f7d033"> </script>
+</head>
+<body>
+    <div class='loader-container'>
+        <div class='loader-spinner'>
+            <ul>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+        </div>
+    </div>
+    <article id='app' data-component='app'>
+        <div name='form-container'></div>
+        <div name='modal-container'></div>
+        <header class='header-container' id='header' data-component='header'>
+            <div class='nav container' >
+                <div class='nav-left'>
+                    <a role="button" class="navbar-burger is-hidden-desktop" aria-label="menu" aria-expanded="false" data-target="navbar" name=burger data-event='click:burger'>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                    <div>
+                        <img src='./images/logo-header.png' class='' data-role='home'>
+                    </div>
+                </div>
+                <div class='nav-right'>
+                    <a class='button is-default is-medium' data-role='sign-up' href='http://qa.bingorepublic.com.ph/registration'>Sign Up</a>
+                    <a class='button is-success is-medium' data-role='login' href='http://qa.bingorepublic.com.ph/login'>Log In</a>
+                </div>
+                <div class='divider'></div>
+                <div class='nav-bottom'>
+                    <div>
+                        <a data-role='category/bingo'>E-BINGO</a>
+                        <a data-role='category/games'>E-GAMES</a>
+                        <a data-role='category/sabong'>E-SABONG</a>
+                        <a data-role='category/sports'>SPORTSBOOK</a>
+                        <div>
+                            <a data-role='category/sports' class='is-hidden-touch'>VIP CLUB</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- <aside name='sidebar' class='is-hidden-desktop'>
+            <div class='first'>
+                <div class='first-content'>
+                    <a data-event='click:back'>
+                        <img src='./images/sidebar-back.png'>
+                    </a>
+                    <img src='./images/logo-header.png'>
+                </div>
+            </div>
+            <div class='divider'></div>
+            <div class='second'>
+                <div class='sidebar-login'>
+                    <img src='./images/sidebar-login.png'>
+                    <button class='button is-success'>Log In</button>
+                </div>
+            </div>
+            <div class='third'>
+                <div class='sidebar-item'>
+                    <img>
+                    <a>Home</a>
+                </div>
+                <div class='sidebar-item'>
+                    <img>
+                    <a>About</a>
+                </div>
+                <div class='sidebar-item'>
+                    <img>
+                    <a>VIP Club</a>
+                </div>
+                <div class='sidebar-item'>
+                    <img>
+                    <a>Payments</a>
+                </div>
+                <div class='sidebar-item'>
+                    <img>
+                    <a>Blog</a>
+                </div>
+                <div class='sidebar-item'>
+                    <img>
+                    <a>Promotions</a>
+                </div>
+                <div class='sidebar-item'>
+                    <img>
+                    <span>Contact Us</span>
+                </div>
+            </div>
+            <div class='fourth'>
+                
+            </div>
+        </aside> -->
+        <main name='banner' id='banner-container' data-component='banner-container'>
+            <img src='./images/age-restrict-header.png' class='age-restrict-1'>
+            <main name='banner-first' class='banner-top'>
+                <div>Trust the First Filipino Online Gaming Platform</div>
+                
+            </main>
+            <main name='banner-second' class='main-top banner'>
+                <div class='carousel-container'></div>
+            </main>
+        </main>
+        <div class='category-container'>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 160"><path fill="#0099ff" fill-opacity="1" d="M0,64L80,64C160,64,320,64,480,58.7C640,53,800,43,960,58.7C1120,75,1280,117,1360,138.7L1440,160L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path></svg>
+            <div class='divider-grp' style='padding:0px;'>
+                <div class='divider'></div>
+                <h1 class='divider-name'>Game Categories</h1>
+                <div class='divider'></div>
+            </div>
+
+            <main name='category' data-component='category'>
+                <div class='game-category-container'>
+                    <div class='game-category-item'>
+                        <section class='first-level'>
+                            <h1 class='name'>E-BINGO</h1>
+                            <h2 class='promo'>Play exciting E-Bingo games</h2>
+                        </section>
+                        <div class='second-level'>
+                            <img class='category' src='./images/e-bingo.png'>
+                        </div>
+                        <div class='third-level'>
+                            <a target='_blank' href='/games/e-bingo' class='button is-danger'>PLAY NOW</a>
+                        </div>
+                    </div>
+
+                    <div class='game-category-item'>
+                        <section class='first-level'>
+                            <h1 class='name'>E-Games</h1>
+                            <h2 class='promo'>Play E-Games</h2>
+                        </section>
+                        <div class='second-level'>
+                            <img class='category' src='./images/casino.png'>
+                        </div>
+                        <div class='third-level'>
+                            <button class='button is-success'>PLAY NOW</button>
+                        </div>
+                    </div>
+
+                    <div class='game-category-item'>
+                        <section class='first-level'>
+                            <h1 class='name'>E-Sabong</h1>
+                            <h2 class='promo'>Play E-Sabong</h2>
+                        </section>
+                        <div class='second-level'>
+                            <img class='category' src='./images/e-sabong.png'>
+                        </div>
+                        <div class='third-level'>
+                            <button class='button is-warning'>PLAY NOW</button>
+                        </div>
+                    </div>
+
+                    <div class='game-category-item'>
+                        <section class='first-level'>
+                            <h1 class='name'>Sportsbook</h1>
+                            <h2 class='promo'>Bet in your favorite games</h2>
+                        </section>
+                        <div class='second-level'>
+                            <img class='category' src='./images/sportsbook.png'>
+                        </div>
+                        <div class='third-level'>
+                            <button class='button is-info'>PLAY NOW</button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <div class='svg-align'></div>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0099ff" fill-opacity="1" d="M0,128L80,154.7C160,181,320,235,480,245.3C640,256,800,224,960,224C1120,224,1280,256,1360,272L1440,288L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path></svg>
+            
+        </div>
+        <div class='main-middle' id='main' data-component='main'>
+
+
+            <div class='divider-grp'>
+                <div class='divider'></div>
+                <h1 class='divider-name'>Get Started</h1>
+                <div class='divider'></div>
+            </div>
+
+            <main name='sign-up' class='section' >
+                <div class='sign-up-instruction'>
+                    <div class='sign-up-top'>
+                        <h1 class='title'>Be a</h1>
+                        <h1 class='title' style='color:#f57c00'>Winner</h1>
+                        <h1 class='title'>in 3 easy steps!</h1>
+                    </div>
+                    <div class='sign-up-middle'>
+                        <div class='sign-up-item'>
+                            <span>Step 1</span>
+                            <img src='./images/sign up.png'>
+                            <span>Sign Up</span>
+                        </div>
+                        <div class='sign-up-arrow'>
+                            <img src='./images/arrow.png'>
+                        </div>
+                        <div class='sign-up-item'>
+                            <span>Step 2</span>
+                            <img src='./images/atm.png'>
+                            <span>Deposit</span>
+                        </div>
+                        <div class='sign-up-arrow'>
+                            <img src='./images/arrow.png'>
+                        </div>
+                        <div class='sign-up-item'>
+                            <span>Step 3</span>
+                            <img src='./images/gold.png'>
+                            <span>Win</span>
+                        </div>
+                    </div>
+                    <div class='sign-up-bottom'>
+                        <button class='button is-success is-large'>Sign Up Now!</button>
+                    </div>
+                </div>
+            </main>
+
+            <div class='divider-grp'>
+                <div class='divider'></div>
+                <h1 class='divider-name'>Any questions?</h1>
+                <div class='divider'></div>
+            </div>
+
+            <main name='contact' class='section' data-component='contact'>
+                <div class='customer-service'>
+                    <div>
+                        
+                        <h1 class='subtitle is-3'>Our dedicated support team is here for you 24/7.</h1>
+                    </div>
+                    <div class='circle-container'>
+                        <div class='circle'>
+                            <div class='circle-content'>
+                                <span class="material-icons" >email</span>
+                                <span>Email</span>
+                            </div>
+                        </div>
+                        <div class='circle'>
+                            <div class='circle-content'>
+                                <span class="material-icons"  >call</span>
+                                <span>Phone</span>
+                            </div>
+                        </div>
+                        <div class='circle'>
+                            <div class='circle-content'>
+                                <span class="material-icons"  >chat</span>
+                                <span>Live Chat</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <div class='shadow'></div>
+        </div>
+
+
+        <main name='terms'>
+            <div class='terms-and-conditions'>
+                <div class='container'>
+                    <h1 class='title is-3'>Terms and Conditions</h1>
+                    <div class='terms'>
+                        <h1 class='title is-4'>General</h1>
+                        <p class='content'>
+                            <p>
+                                By ticking the age verification and the "Terms of Service" checkbox during the registration process, the user acknowledge that he/she has read, understand, and agrees to be bound by Lucky888bet User Agreement in its entirety and without reservation. As such, the User Agreement constitutes a binding legal document between the user and Lucky888bet. The Agreement always governs the user’s use of our gambling services.
+                            </p>
+                            <ol>
+                                <li>
+                                    Players must be at least 21 years of age to play with Lucky888bet.com. 
+                                </li>
+                                <li>
+                                    Lucky888bet.com reserves the right to void any transactions involving players under 21 years old, employees (as well as their immediate relatives) of the Philippine government, PAGCOR, Lucky888bet, law enforcement agencies, members of the military and anyone residing in the Philippines.
+                                </li>
+                                <li>
+                                    Lucky888bet.com accepts bets within the Philippines. All bets accepted by Lucky888bet.com Games are subjected to these terms & conditions.
+                                </li>
+                                <li>
+                                    Lucky888bet.com reserves the right to amend these terms and conditions at any time without prior notification. All editions will show version number and validity start date.
+                                </li>
+                                <li>
+                                    It is the exclusive responsibility of the players to ensure compliance if the set rules before registering with Lucky888bet.
+                                </li>
+                                <li>
+                                    Lucky888bet.com Games reserves the right to change any of the rules anytime without prior notice.
+                                </li>
+                                <li>
+                                    We shall treat any breach of these Terms and Conditions as a serious matter and we may take any steps at law, which we deem fit and proper to protect our interests.`
+                                </li>
+                            </ol>
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
+        </main>
+
+        <section>
+            <footer name='first'>
+                <div class='container'>
+                    <div name='first-content'>
+                        <div class='left'>
+                            <div class='footer-links'>
+                                <div class='footer-content'>
+                                    <div class='footer-links-left'>
+                                        <div>
+                                            <a>ABOUT</a>
+                                            <a>CONTACT</a>
+                                            <a>AFFILIATES</a>
+                                            <a>HELP DESK</a>
+                                            <a>FORGOT PASSWORD</a>
+                                            <a>SITEMAP</a>
+                                        </div>
+                                        <div>
+                                            <a>SPECIAL OFFERS</a>
+                                            <a>NEXT GAMES</a>
+                                            <a>ARTICLES</a>
+                                            <a>BLOGS</a>
+                                            <a>PRESS</a>
+                                            <a>RULES</a>
+                                        </div>
+                                        <div>
+                                            <a>PRIVACY POLICY</a>
+                                            <a>KYC POLICY</a>
+                                            <a>AMLC POLICY</a>
+                                            <a>TERMS AND CONDITIONS</a>
+                                            <a>RESPONSIBLE GAMING</a>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                            </div>
+                            <div class='footer-about'>
+                                <img src='./images/logo-footer.png' name='logo'>
+                                <p class='content'>
+                                    LuckyBet888 is operated by TV Global Enterprises Ltd. C 44378 Having its registered address at Villa Seminia, 
+                                    8 Sir Temi Zammit Avenue Ta´Xbiex XBX 1011 Malta, 18883567133. Licensed and regulated by Malta Gaming Authority 
+                                    (MGA/B2C/300/2008) Remote Gaming License: 1st August 2018 valid until the 3rd Day of November, 2026.
+                                </p>
+                            </div>
+                            <div class='footer-restrict'>
+                                <img src='./images/age-restrict-header.png' name='restrict'>
+                                <p class='content'>
+                                    LuckyBet888 does not promote itself for children or under the age of 18. 
+                                    Children must always have the permission of their parents before sending any 
+                                    information on themselves (such as their names, email addresses and telephone numbers) 
+                                    by internet, to us or anyone. If you are under 18 (or under the legal age for betting 
+                                    in your country of residence), please do not enter the Betcris website. Gambling can 
+                                    be addictive, please play responsibly. For more information, 
+                                    please visit our Responsible Gaming page.
+                                </p>
+                            </div>
+                        </div>
+                    
+                        <div class='right'>
+                            <div>
+                                <div class='footer-btn-signup'>
+                                    <button type='button' class='button is-success is-medium'>Sign Up Now!</button>
+                                </div>
+                                <div class='footer-social'>
+                                    <div>
+                                        <div>FOLLOW US ON</div>
+                                        <div class='socials'>
+                                            <img src='./images/FB.png'>
+                                            <img src='./images/IG.png'>
+                                            <img src='./images/TIKTOK.png'>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class='footer-pagcor'>
+                                    <div> 
+                                        <img src='./images/pagcor-footer.png'>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <footer name='third'>
+                <div class='payment-options'>
+                    <div class='payment-options-container'>
+                        <div></div>
+                        <nav class="level">
+                            <div class="level-item has-text-centered">
+                                <a><img src='./images/gcash.png'></a>
+                            </div>
+                            <div class="level-item has-text-centered">
+                                <a><img src='./images/payment-paymaya.png'></a>
+                            </div>
+                            <div class="level-item has-text-centered">
+                                <a><img src='./images/mlhuillier.png'></a>
+                            </div>
+                            <div class="level-item has-text-centered">
+                                <a><img src='./images/wechat_pay.png'></a>
+                            </div>
+                        </nav>
+                        <div></div>
+                    </div>
+                    <div class='payment-options-container'>
+                        <div></div>
+                        <nav class="level">
+                            <div class="level-item has-text-centered">
+                             <a><img src='./images/visa.png'></a>
+                            </div>
+                            <div class="level-item has-text-centered">
+                                <a><img src='./images/mastercard.png'></a>
+                            </div>
+                        </nav>
+                        <div></div>
+                    </div>
+                    <div class='payment-options-container'>
+                        <div></div>
+                        <nav class="level">
+                            <div class="level-item has-text-centered">
+                                <a><img src='./images/AUB.png'></a>
+                            </div>
+                            <div class="level-item has-text-centered">
+                                <a><img src='./images/BDO.png'></a>
+                            </div>
+                            <div class="level-item has-text-centered">
+                                <a><img src='./images/BPI.png'></a>
+                            </div>
+                            <div class="level-item has-text-centered">
+                                <a><img src='./images/UnionBank.png'></a>
+                            </div>
+                        </nav>
+                        <div></div>
+                    </div>
+                </div>
+            </footer>
+
+            <footer name='fourth'>
+                <div class='footer-game-links'>
+                    <div class='container'>
+                        <div class='footer-left '>
+                            <a>E-BINGO</a>
+                            <a>E-GAMES</a>
+                            <a>E-SABONG</a>
+                            <a>SPORTSBOOK</a>
+                        </div>
+                        <div class='footer-right'>
+                            <img src='./images/age-restrict-footer.png'>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+            <footer name='fifth'>
+                <div class='copyright'>© Copyright 2021 All Rights reserved. | Lucky 888 Bet, Inc</div>
+            </footer>
+        </section>
+        
+    </article>
+
+
+    <template id='dropdown'>
+        <div class="nav-dropdown" data-animate='ns:drop'>
+            <a class="nav-item" data-for='option of navOptions' >
+                <img  class="hvr-float-shadow" data-src="{{option.img}}">
+            </a>
+        </div>
+    </template>
+
+    <template id='slide'>
+        <div class='slide-content  grid-slide-responsive'>
+            <div class="splide " data-container='classic'>
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide" data-for='classic of classics'>
+                            <figure class="image img-container" >
+                                <figcaption>{{display}}</figcaption>
+                                <img  class="hvr-float-shadow" data-src={{img}}>
+                            </figure>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="splide" data-container='variant'>
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide" data-for='variant of variants'>
+                            <figure class="image img-container" >
+                                <figcaption>{{display}}</figcaption>
+                                <img  class="hvr-float-shadow" data-src={{img}}>
+                            </figure>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+    </template>
+
+
+    <template id='carousel'>
+        <div class='carousel-content'>
+            <div class="splide carousel">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">
+                            <div class="banner" data-splitting="cells" data-columns="10" data-rows="9">
+                                <img class='img ' src='./images/banner.cover.png'></img>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class='bonus'>
+                <img src='./images/banner.promo1.png'>
+            </div>
+            <div class='gold-bag'>
+                <img src='./images/bag_of_chips.png'>
+            </div>
+            <div class='play_now_container'>
+                <a><img src='./images/claim_now.png'></a>
+                <a href='#t&c'>Terms and Conditions</a>
+            </div>
+        </div>
+    </template>
+
+    <template id='spinner'>
+        <style>
+            #dots-container{
+                z-index: 1000;
+            }
+        </style>
+        <div id=dots-container data-animate='render:appear, remove:disappear' data-event='click:destroy'>
+            <div class="dots-4"></div>
+        </div>
+    </template>
+
+    <template id='toolbar'>
+        <div class="tabs is-toggle is-right" data-animate='ns:toolbar'>
+            <ul data-event='click'>
+                <li data-for='toolbar of toolbars'>
+                    <a data-name={{id}} data-toggle='tool'>
+                        <span class="icon is-small"><i class="fa {{icon}}" aria-hidden="true"></i></span>
+                        <span>{{display}}</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </template>
+
+    <template id='modal'>
+        <div class="modal is-active">
+            <div class="modal-background"></div>
+            <div class="modal-content"></div>
+            <button data-event='click:destroy' class="modal-close is-large" aria-label="close"></button>
+          </div>
+    </template>
+
+    <template id='pop'>
+        <div class='pop-container' data-animate='render:slideInDown'>
+            <img src='./images/pop.png'>
+            <div class='buttons' >
+                <a class='button is-success' data-event='click' data-name='yes' href='http://qa.bingorepublic.com.ph/registration'>I AM OVER 21 YEARS OLD</a>
+                <a class='button is-default' data-name='no' href='http://www.google.com'>EXIT</a>
+            </div>
+        </div>
+    </template>
+
+      
+    <template id='step-form'>
+        <section class='step-form'>
+          <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item" data-toggle='step' name='first'>
+                  <div>
+                      <span>Step 1</span>
+                      <span>Account</span>
+                  </div>
+              </li>
+              <li class="breadcrumb-item" data-toggle='step' name='second'>
+                    <span class='chevron'></span>
+                    <div>
+                        <span>Step 2</span>
+                        <span>Identity</span>
+                    </div>
+                </li>
+                <li class="breadcrumb-item" data-toggle='step' name='third'>
+                  <span class='chevron'></span>
+                  <div>
+                      <span>Step 3</span>
+                      <span>Address</span>
+                    </div>
+                </li>
+                <li class="breadcrumb-item" data-toggle='step' name='fourth'>
+                  <span class='chevron'></span>
+                  <div>
+                      <span>Step 4</span>
+                      <span>Files</span>
+                    </div>
+                </li>
+                <li class="breadcrumb-item" data-toggle='step' name='fifth'>
+                    <span class='chevron'></span>
+                    <div>
+                      <span>Step 5</span>
+                      <span>Finish</span>
+                  </div>
+              </li>
+            </ol>
+          </nav>
+            <form name='form' data-animate='ns:form' data-container='form'>
+              <div class="mb-3"  data-for='control of formControls'>
+                <label for="{{id}}" class="form-label">{{title}}</label>
+                <div data-switch='formControls.tag'>
+                  <input data-case='input' name={{id}} type=text class="form-control" id={{id}} placeholder={{title}}>
+                  <select data-case='select' name={{id}} type=text class="form-control" id={{id}} placeholder={{title}}>
+                    <option data-for-auto=true name={{id}} data-for-bind-key='id' data-for-bind-val={{id}} data-for='option of control.options' value='{{value}}'>{{text}}</option>
+                  </select>
+                </div>
+              </div>
+              <div data-event='click'>
+                <button form='form'  type={{type}} data-for='button of formButtons' class='{{cls}}'>{{display}}</button>
+              </div>
+            </form>
+        </section>
+    </template>
+
+    <template id='login-form'>
+        <section class='login-form'>
+            <form name='form' data-animate='ns:form' data-container='form'>
+              <div class="mb-3" >
+                <label for="username" class="form-label">User Name</label>
+                <input name="username" type=text class="form-control" id="username" placeholder=username>
+              </div>
+              <div class="mb-3"  >
+                <label for="password" class="form-label">Password</label>
+                <input name="password" type=text class="form-control" id="password" placeholder=password>
+              </div>
+              <div class="mb-3"  >
+                <label for="Security Pin" class="form-label">Security Pin</label>
+                <input name=otp type=text class="form-control" id=otp placeholder='security pin'>
+              </div>
+              <div data-event='click'>
+                <button class='btn btn-primary'>Cancel</button>
+                <button class='btn btn-secondary'>Login</button>
+              </div>
+            </form>
+        </section>
+    </template>
+
+
+    <template id='form.sign-up'>
+        <section class='login-form'>
+            <form name='form' data-animate='ns:form' data-container='form'>
+                <div class="field" data-for='control of formControls'>
+                    <label for={{id}} class="label">{{display}}</label>
+                    <div class="control">
+                        <div data-switch='formControls.tag'></div>
+                            <input data-case='input' class="input" type="text" placeholder={{display}} id={{id}}>
+                            <select data-case='select' class="input" type="text" placeholder={{display}} id={{id}}>
+                                <option data-for-auto=true name={{id}} data-for-bind-key='id' data-for-bind-val={{id}} data-for='option of control.options' value='{{value}}'>{{text}}</option>
+                            </select>
+                            <div data-case='virtual' id={{id}}></div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </template>
+
+    
+    <script src='https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.21/dist/js/splide.min.js'></script>
+    <script src='/asset/swal.js'></script>
+    <script src='/asset/fields.js'></script>
+
+
+    <script src='/asset/bundled.js'></script>
+
+
+    <script src='component/app.js'></script>
+    <script src='component/carousel.js'></script>
+    <script src='component/header.js'></script>
+    <script src='component/modal.js'></script>
+    <script src='component/pop-up.js'></script>
+    <script src='component/form.login.js'></script>
+    <script src='component/form.sign-up.js'></script>
+
+    <script src='./upup.min.js'></script>
+    <script src='./upup.sw.min.js'></script>
+    <script>
+    //     UpUp.start({
+    //       'content-url': './index.html', // show this when the user is offline
+    //       'assets': [                 // define additional assets needed while offline:
+    //             'https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.21/dist/css/splide.min.css',
+    //             'https://cdn.jsdelivr.net/npm/hover.css@2.3.2/css/hover.min.css',
+    //             'https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.21/dist/js/splide.min.js',
+    //       ]
+    //   });
+    </script>
+ <script>
+     document.addEventListener('DOMContentLoaded', function(e){
+         
+         const loader = document.querySelector('.loader-container');
+         setTimeout(()=>{
+             loader.remove();
+         }, 500);
+     })
+ </script>
+</body>
+</html>
+

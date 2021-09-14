@@ -1,0 +1,26 @@
+footer[name=fourth]{
+    background-color:#00426B; 
+    padding: 20px 0px 5rem;
+}
+
+footer[name=fourth] .footer-game-links{
+    background-color: #00426B;
+
+}
+footer[name=fourth] .footer-game-links>div{
+    display:grid;
+    grid-auto-flow: column;
+    align-items: center;
+}
+footer[name=fourth] .footer-game-links .footer-left a{
+    margin: 0px 1.5rem;
+    color:white;
+}
+footer[name=fourth] .footer-game-links .footer-right{
+    text-align: end;
+}
+
+.footer-container>.footer-game-links{
+    padding-bottom:83px;
+    padding-top:59px;
+}

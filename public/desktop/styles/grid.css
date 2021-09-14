@@ -1,0 +1,28 @@
+.grid{
+    display:grid;
+}
+.grid-flow-col{
+    grid-auto-flow: column;
+}
+.grid-gap-1{
+    grid-gap:8px;
+}
+.grid-gap-2{
+    grid-gap:16px;
+}
+.grid-gap-3{
+    grid-gap:24px;
+}
+.grid-justify-center{
+    justify-content: center;
+}
+.grid-align-center{
+    align-content: center;
+}
+.grid-row-max-content{
+    grid-template-rows: max-content;
+}
+
+.inline-grid{
+    display: inline-grid;
+}

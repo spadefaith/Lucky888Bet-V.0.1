@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ff7a18">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:url"                content="https://luckybet888.herokuapp.com/" />
+    <meta property="og:type"               content="website" />
+    <meta property="og:title"              content="Lucky 888 Bet" />
+    <meta property="og:description"        content="A website where you can play legal betting games and win" />
+    <meta property="og:image"              content="https://luckybet888.herokuapp.com/image/logo/logo-md.png" />
+
+
+    <!-- <meta property="og:image" content="http://euro-travel-example.com/thumbnail.jpg"> -->
+    <!-- <meta property="og:url" content="http://euro-travel-example.com/index.htm"> -->
+    <meta name="twitter:card" content="summary_large_image">
+    
+    
+    <!--  Non-Essential, But Recommended -->
+    
+    <meta property="og:site_name" content="Lucky 888 Bet">
+    <meta name="twitter:image:alt" content="Alt text for image">
+    <meta name="twitter:image" content="https://luckybet888.herokuapp.com/image/logo/logo-md.png">
+    
+    
+    <!--  Non-Essential, But Required for Analytics -->
+    
+    <meta name='twitter:name' content='Lucky 888 Bet'>
+    <meta name='twitter:description' content='A website where you can play legal betting games and win'>
+
+    <!-- <meta property="fb:app_id" content="your_app_id" />
+    <meta name="twitter:site" content="@website-username"> -->
+
+    <title>Lucky 888 Bet</title>
+  
+
+    <link rel="shortcut icon" type="image/png" href="./image/logo/logo-sm.png"/>
+
+
+    <link rel="stylesheet" href="./styles/vapor.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/splitting@1.0.6/dist/splitting-cells.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/splitting@1.0.6/dist/splitting.min.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hover.css@2.3.2/css/hover.min.css">
+    
+
+  
+    
+    
+    <!-- <link href='./styles/grid.css' rel='stylesheet'>
+    <link href='./styles/responsive.css' rel='stylesheet'>
+    <link href='./styles/bg.css' rel='stylesheet'> -->
+    <link href='./styles/custom.css' rel='stylesheet'>
+    <link href='./styles/vars.css' rel='stylesheet'>
+    <link href='./styles/logo.css' rel='stylesheet'>
+    <link href='./styles/steps.css' rel='stylesheet'>
+    <link href='./styles/carousel.css' rel='stylesheet'>
+    <link href='./styles/dropdown.css' rel='stylesheet'>
+    <link href='./styles/header.css' rel='stylesheet'>
+    <link href='./styles/main.css' rel='stylesheet'>
+    <link href='./styles/pre-footer.css' rel='stylesheet'>
+
+    <script src='./scripts/custom.js'></script>
+</head>
+<body>
+    
+   
+    <div class='background is-hidden-touch'></div>
+    <article id='app' data-component="app">
+        <header id='nav' data-component='nav' class="">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">
+                      <img src='./image/logo/logo-header.png' class='logo-top-left'>
+                  </a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+
+                  <div class="collapse navbar-collapse" id="navbarColor02">
+                    <ul class="navbar-nav me-auto">
+
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">BINGO</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">CASINO</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">SPORTS</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">SABONG</a>
+                      </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">INFO</a>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="#">PAYMENTS</a>
+                          <a class="dropdown-item" href="#">TERMS AND CONDITIONS</a>
+                          <a class="dropdown-item" href="#">ABOUT</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">FAQS</a>
+                        </div>
+                      </li>
+                    </ul>
+                    <form class="d-flex">
+
+                      <button class="btn btn-primary btn-md mx-2 my-2 my-sm-0" type="button">LOGIN</button>
+                      <button class="btn btn-secondary btn-md mx-2 my-2 my-sm-0" type="button">SIGN UP</button>
+                    </form>
+                  </div>
+                </div>
+              </nav>
+        </header>
+        <main id='main-section' data-component='main-section'>
+
+        </main>
+       
+    </article>
+
+    <template id='modal'>
+      <div class="modal fade show" tabindex="-1" role="dialog" >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Registration Form</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p name='modal-content'></p>
+            </div>
+            <div class="modal-footer">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </template>
+
+
+
+    <template id='step-form'>
+        <section class='step-form'>
+          <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item" data-toggle='step' name='first'>Step 1</li>
+              <li class="breadcrumb-item" data-toggle='step' name='second'>Step 2</li>
+              <li class="breadcrumb-item" data-toggle='step' name='third'>Step 3</li>
+            </ol>
+          </nav>
+            <form name='form' data-animate='ns:form' data-container='form'>
+              <div class="mb-3"  data-for='control of formControls'>
+                <label for="{{id}}" class="form-label">{{title}}</label>
+                <div data-switch='formControls.tag'>
+                  <input data-case='input' name={{id}} type=text class="form-control" id={{id}} placeholder={{title}}>
+                  <select data-case='select' name={{id}} type=text class="form-control" id={{id}} placeholder={{title}}>
+                    <option data-for-auto=true name={{id}} data-for-bind-key='id' data-for-bind-val={{id}} data-for='option of control.options' value='{{value}}'>{{text}}</option>
+                  </select>
+                </div>
+              </div>
+              <div data-event='click'>
+                <button form='form'  type={{type}} data-for='button of formButtons' class='{{cls}}'>{{display}}</button>
+              </div>
+            </form>
+        </section>
+    </template>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src='/asset/swal.js'></script>
+
+    <script src='/asset/cake-env.js'></script>
+    <script src='/asset/cake-pollyfill.js'></script>
+    <script src='/asset/cake-utils.js'></script>
+    <!-- <script src='/asset/cake.js'></script> -->
+    <script src='/asset/cake-attributes.js'></script>
+    <script src='/asset/cake-mo.js'></script>
+    <script src='/asset/cake-databinding.js'></script>
+    <script src='/asset/cake-observer.js'></script>
+    <script src='/asset/cake-persist.js'></script>
+    <script src='/asset/cake-hash.js'></script>
+    <script src='/asset/cake-piece.js'></script>
+    <script src='/asset/cake-prototype.js'></script>
+    <script src='/asset/cake-storage.js'></script>
+    <script src='/asset/cake-form.js'></script>
+    <script src='/asset/cake-template-proto.js'></script>
+    <script src='/asset/cake-templates.js'></script>
+    <script src='/asset/cake-component.js'></script>
+    <script src='/asset/cake-components.js'></script>
+
+    <script src='./component/app.js'></script>
+    <script src='./component/step-form.js'></script>
+    <script src='./component/model-remote.js'></script>
+    <script src='./component/modal.js'></script>
+
+</body>
+</html>
+

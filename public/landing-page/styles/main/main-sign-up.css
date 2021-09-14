@@ -1,0 +1,183 @@
+
+main[name=sign-up]{
+    --img-w:204px;
+    --img-h:204px;
+    --arrow-w:32px;
+    --arrow-h:56px;
+    --gap-col:70px;
+    --top-fs:42px;
+    --top-template-cols:max-content max-content max-content;
+    --top-mgb:1.5rem;
+    --grid-flow:column;
+    --arrow-transform:rotate(0deg);
+    --btn-fs:24px;
+
+    background-color:unset;
+    padding-top:0px;
+}
+@media (max-width: 319px){
+    main[name=sign-up]{
+        --top-mgb:0px;
+        --img-w:150px;
+        --img-h:150px;
+        --arrow-w:16px;
+        --arrow-h:40px;
+        --gap-col: 5px;
+        --top-fs:30px;
+        --grid-flow:row;
+        --arrow-transform:rotate(90deg);
+        --top-template-cols:unset;
+        --gap-col: 30px;
+        --btn-fs: 15px;
+    }
+}
+
+
+@media (min-width: 320px) and (max-width:419px) {
+    main[name=sign-up]{
+        --img-w:150px;
+        --img-h:150px;
+        --arrow-w:16px;
+        --arrow-h:40px;
+        --gap-col: 5px;
+        --top-fs:30px;
+        --grid-flow:row;
+        --arrow-transform:rotate(90deg);
+        --top-template-cols:unset;
+        --gap-col: 15px;
+        --btn-fs: 15px;
+    }
+}
+
+
+@media (min-width: 420px) and (max-width:575px) { 
+    main[name=sign-up]{
+        --img-w:180px;
+        --img-h:180px;
+        --arrow-w:20px;
+        --arrow-h:50px;
+        --gap-col: 5px;
+        --top-fs:30px;
+        --grid-flow:row;
+        --arrow-transform:rotate(90deg);
+        --btn-fs: 18px;
+    }
+}
+
+@media (min-width: 576px) and (max-width:764px) { 
+    main[name=sign-up]{
+        --img-w:130px;
+        --img-h:130px;
+        --arrow-w:28px;
+        --arrow-h:52px;
+        --gap-col: 30px;
+        --top-fs:35px;
+        --btn-fs: 20px;
+    }
+}
+
+@media (min-width: 765px) and (max-width:867px) { 
+    main[name=sign-up]{
+        --img-w:150px;
+        --img-h:150px;
+        --arrow-w:28px;
+        --arrow-h:52px;
+        --gap-col: 50px;
+        --top-fs:35px;
+        --btn-fs: 21px;
+    }
+}
+@media (min-width: 868px) and (max-width:962px) { 
+    main[name=sign-up]{
+        --img-w:150px;
+        --img-h:150px;
+        --arrow-w:28px;
+        --arrow-h:52px;
+        --gap-col: 65px;
+        --btn-fs: 22px;
+    }
+}
+
+
+@media (min-width:963px) and (max-width:1224px) { 
+    main[name=sign-up]{
+
+    }
+}
+
+
+
+
+@media (min-width: 1225px) and (max-width:1399px) { 
+    
+    main[name=sign-up]{
+
+    }
+}
+
+
+@media (min-width: 1400px) {
+    main[name=sign-up]{
+
+    }
+}
+
+main[name=sign-up] .sign-up-instruction{
+    display:grid;
+    grid-gap: 72px;
+    justify-content: center;
+}
+main[name=sign-up] .sign-up-instruction .sign-up-middle{
+    display:grid;
+    grid-auto-flow: var(--grid-flow);
+    grid-gap: var(--gap-col);
+    place-items: center;
+    
+}
+main[name=sign-up] .sign-up-instruction .sign-up-bottom{
+   text-align: center;
+}
+main[name=sign-up] .sign-up-instruction .sign-up-top{
+    display:inline-grid;
+    grid-template-columns: var(--top-template-cols);
+    grid-template-rows: var(--top-template-rows);
+    justify-items: center;
+    align-content: center;
+    justify-content: center;
+    grid-column-gap: 1rem;
+}
+main[name=sign-up] .sign-up-instruction .sign-up-top h1{
+    font-size: var(--top-fs);
+    color:white;
+    
+}
+main[name=sign-up] .sign-up-instruction .sign-up-middle .sign-up-item{
+    display:grid;
+    justify-items: center;
+    grid-gap:1rem;
+}
+
+main[name=sign-up] .sign-up-instruction .sign-up-middle .sign-up-item span:nth-child(1){
+    font-size: 24px;
+    font-weight: 700;
+    color:white;
+}
+main[name=sign-up] .sign-up-instruction .sign-up-middle .sign-up-item span:nth-child(3){
+    color:white;
+}
+
+main[name=sign-up] .sign-up-instruction .sign-up-middle .sign-up-item img{
+    width:var(--img-w);
+    height: var(--img-h);
+}
+
+main[name=sign-up] .sign-up-instruction .sign-up-bottom button{
+    font-size: var(--btn-fs)!important;
+}
+
+main[name=sign-up] .sign-up-instruction .sign-up-middle .sign-up-arrow img{
+    width: var(--arrow-w);
+    height: var(--arrow-h);
+    transform:var(--arrow-transform)
+}
+

@@ -1,0 +1,165 @@
+main[name=contact]{
+    --circle-w:250px;
+    --circle-h:250px;
+    --top-t-fs:48px;
+    --top-sb-fs:26px;
+    --col-gap:131px;
+    --icon-s:50px;
+    --icon-n:16px;
+    --circle-top-mg:40px;
+    background-color:unset;
+    padding:10px 0px 83px;
+}
+@media (max-width: 319px){
+    main[name=contact]{
+        --circle-w:80px;
+        --circle-h:80px;
+        --top-t-fs:25px;
+        --top-sb-fs:15px;
+        --col-gap:20px;
+        --icon-s:25px;
+        --icon-n:12px;
+    }
+}
+
+
+@media (min-width: 320px) and (max-width:419px) {
+    main[name=contact]{
+        --circle-w:100px;
+        --circle-h:100px;
+        --top-t-fs:25px;
+        --top-sb-fs:15px;
+        --col-gap:10px;
+        --icon-s:25px;
+        --icon-n:12px;
+    }
+}
+
+
+@media (min-width: 420px) and (max-width:575px) { 
+    main[name=contact]{
+        --circle-w:100px;
+        --circle-h:100px;
+        --top-t-fs:30px;
+        --top-sb-fs:20px;
+        --col-gap:50px;
+        --icon-s:30px;
+        --icon-n:13px;
+    }
+}
+
+@media (min-width: 576px) and (max-width:764px) { 
+    main[name=contact]{
+        --circle-w:180px;
+        --circle-h:180px;
+        --top-t-fs:35px;
+        --top-sb-fs:28px;
+        --col-gap:50px;
+    }
+}
+
+@media (min-width: 765px) and (max-width:867px) { 
+    main[name=contact]{
+        --circle-w:180px;
+        --circle-h:180px;
+        --top-t-fs:35px;
+        --top-sb-fs:28px;
+        --col-gap:80px;
+    }
+}
+@media (min-width: 868px) and (max-width:962px) { 
+    main[name=contact]{
+        --circle-w:220px;
+        --circle-h:220px;
+        --top-t-fs:35px;
+        --top-sb-fs:28px;
+        --col-gap:80px;
+    }
+}
+
+
+@media (min-width:963px) and (max-width:1224px) { 
+    main[name=contact]{
+        --circle-w:220px;
+        --circle-h:220px;
+        --top-t-fs:35px;
+        --top-sb-fs:28px;
+        --col-gap:80px;
+    }
+}
+
+
+
+
+@media (min-width: 1225px) and (max-width:1399px) { 
+    
+    main[name=contact]{
+
+    }
+}
+
+
+@media (min-width: 1400px) {
+    main[name=contact]{
+
+    }
+}
+
+main[name=contact] .customer-service{
+    display:grid;
+    justify-items: center;
+}
+main[name=contact] .customer-service>div:nth-child(1){
+    display:grid;
+    justify-items: center;
+}
+/* main[name=contact] .customer-service>div:nth-child(1) h1:nth-child(1){
+    font-size:var(--top-t-fs);
+    color:white;
+} */
+main[name=contact] .customer-service>div:nth-child(1) h1:nth-child(1){
+    font-size:var(--top-sb-fs);
+    text-align: center;
+    color:black;
+}
+
+
+main[name=contact] .customer-service .circle-container{
+    display:grid;
+    grid-auto-flow: column;
+    grid-column-gap: var(--col-gap);
+    margin-top: var(--circle-top-mg);
+}
+
+main[name=contact] .customer-service .circle-container .circle{
+    border-radius: 50%;
+    background-color: white;
+    width: var(--circle-w);
+    height: var(--circle-h);
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+
+main[name=contact] .customer-service .circle-container .circle .circle-content{
+    display:grid;
+    justify-items: center;
+    grid-gap: 10px;
+    color:black;
+}
+main[name=contact] .customer-service .circle-container .circle .circle-content span:nth-child(2){
+    font-size:var(--icon-n);
+    
+}
+main[name=contact] .customer-service .circle-container .circle .circle-content .material-icons{
+    font-size: var(--icon-s);
+}
+main[name=contact] .main-bottom .customer-service{
+    padding-top: 95px;
+    padding-bottom: 150px;
+    display:grid;
+    grid-gap:40px;
+}
+main[name=contact] .main-bottom .customer-service h1{
+    color:white;
+}

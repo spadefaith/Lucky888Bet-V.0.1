@@ -1,0 +1,284 @@
+main[name=banner]{
+    position: relative;
+    --float-img-r:100px;
+    --float-img-t:-30px;
+    --float-img-w:73px;
+    --float-visible:visible;
+    --sub-fs:24px;
+    --claim-left: 15%;
+    --bottom-m:0px;
+    --banner-w:max-content;
+    --banner-h:max-content;
+    --claim-bottom:15%;
+    --claim-w:351px;
+    --terms-fs:18px;
+    --bag-left:0;
+    --bag-h:580px;
+    --bag-w:918px;
+    
+    
+    --bonus-bottom:200px;
+    --bonus-left:20px;
+    --bonus-w:635px;
+    --bonus-h:351px;
+}
+
+@media (max-width: 320px) { 
+    main[name=banner]{
+        --float-visible:hidden;
+        --sub-fs:15px;
+        --banner-w: 320px;
+        --banner-h: 300px;
+        
+        --claim-bottom: 8%;
+        --claim-w:180px;
+        --claim-left:calc((100%/4));
+        
+        --bag-w: 250px;
+        --bag-h: 250px;
+        --bonus-w: 300px;
+        --bonus-bottom:100px;
+        --bonus-left:calc(((100vw - 1152px + 820px)/2));
+    }
+}
+
+
+@media (min-width:321px) and (max-width: 420px) { 
+    main[name=banner]{
+        --float-visible:hidden;
+        --sub-fs:15px;
+        --banner-w: 420px;
+        --banner-h: 300px;
+        --claim-bottom: 8%;
+        --claim-w:180px;
+        --claim-left:calc((100%/4));
+        
+        --bag-w: 300px;
+        --bag-h: 250px;
+        
+        --bonus-w: 300px;
+        --bonus-bottom:100px;
+        --bonus-left:calc(((100vw - 1152px + 820px)/2));
+    }
+}
+
+@media (min-width:421px) and (max-width: 576px) { 
+    main[name=banner]{
+        --float-visible:hidden;
+        --sub-fs:20px;
+        --banner-w: 576px;
+        --banner-h: 300px;
+        
+        --claim-bottom: 8%;
+        --claim-w:195px;
+        --claim-left:calc(((100vw - 1152px + 1000px)/2));
+        
+        --bag-w: 300px;
+        --bag-h: 250px;
+        
+        --bonus-w: 300px;
+        --bonus-bottom:100px;
+        --bonus-left:calc(((100vw - 1152px + 820px)/2));
+    }
+}
+
+@media (min-width:577px) and (max-width: 765px) { 
+    main[name=banner]{
+        --float-img-r:5%;
+        --float-img-t:-30px;
+        --float-img-w:55px;
+        --banner-w: 765px;
+        
+        --claim-bottom: 8%;
+        --claim-w:200px;
+        --claim-left:calc(((100vw - 1152px + 920px)/2));
+        
+        
+        --bag-w: 380px;
+        --bag-h: 350px;
+        
+        --bonus-w: 400px;
+        --bonus-bottom:100px;
+        --bonus-left:calc(((100vw - 1152px + 650px)/2));
+    }
+}
+@media (min-width:766px) and (max-width: 868px) { 
+    main[name=banner]{
+        --float-img-r:5%;
+        --float-img-t:-30px;
+        --float-img-w:60px;
+        
+        --claim-bottom: 8%;
+        --claim-w:250px;
+        --claim-left:calc(((100vw - 1152px + 890px)/2));
+        --bag-w: 500px;
+        --bag-h: 500px;
+        
+    }
+}
+
+
+@media (min-width:869px) and (max-width:963px) { 
+    main[name=banner]{
+        --float-img-r:5%;
+        --float-img-t:-30px;
+        --float-img-w:60px;
+        
+        --claim-bottom: 8%;
+        --claim-w:280px;
+        --claim-left:calc((100%/2.8));
+        
+        --bag-left:calc((100vw - 1152px) / 2 - 123px);
+        --bonus-left:calc(((100vw - 1152px + 380px)/2));
+    }
+}
+
+
+
+
+@media (min-width:964px) and (max-width: 1225px) { 
+    main[name=banner]{
+        --float-img-r:5%;
+        --float-img-t:-30px;
+        --float-img-w:65px;
+        
+        --claim-bottom: 8%;
+        --claim-w:310px;
+        --claim-left:calc(((100vw - 1152px + 850px)/2));
+        
+        
+        --bag-w: 600px;
+        --bag-h: 600px;
+        
+        --bag-left:calc((100vw - 1152px) / 2 - 123px);
+        --bonus-left:calc(((100vw - 1152px + 380px)/2));
+    }
+
+}
+
+
+@media (min-width:1226px) and (max-width: 1400px) {
+    main[name=banner]{
+        --float-img-r:calc((100vw - 1152px)/2);
+        --claim-left:calc(((100vw - 1152px + 9%)/2));
+        --bottom-m:20px;
+        --terms-fs:24px;
+        --bag-left:calc((100vw - 1152px) / 2 - 123px);
+ 
+        --bag-w: 700px;
+        --bag-h: 600px;
+  
+        --bag-left:calc((100vw - 1152px) / 2 - 123px);
+        --claim-left:calc(((100vw - 1152px + 180px)/2));
+        --bonus-left:calc(((100vw - 1152px - 200px)/2));
+    }
+}
+
+@media (min-width:1401px) {
+    main[name=banner]{
+        --float-img-r:calc((100vw - 1152px)/2);
+        --claim-left:calc(((100vw - 1152px + 9%)/2));
+        --bottom-m:20px;
+        --terms-fs:24px;
+        
+        --bag-w: 700px;
+        --bag-h: 600px;
+        
+        --bag-left:calc((100vw - 1152px) / 2 - 123px);
+        --claim-left:calc(((100vw - 1152px + 180px)/2));
+        --bonus-left:calc(((100vw - 1152px - 200px)/2));
+    }
+}
+
+
+
+main[name=banner-first]{
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+}
+
+main[name=banner-first] div{
+    color:#FCA311;
+    font-size: var(--sub-fs);
+    text-align: center;
+    
+}
+main[name=banner]>img{
+    position: absolute;
+    top:var(--float-img-t);
+    right: var(--float-img-r);
+    z-index: 100;
+    width:var(--float-img-w);
+    visibility: var(--float-visible);
+    
+}
+
+
+main[name=banner-second] .banner{
+    overflow: hidden;
+}
+main[name=banner-second] .banner>img{
+    width:var(--banner-w);
+    height:var(--banner-h);
+    object-fit: cover;
+    object-position: center;
+}
+
+main[name=banner-second]{
+    margin-top: var(--bottom-m);
+    margin-bottom: var(--bottom-m);
+}
+
+main[name=banner-second] .carousel-content{
+    position: relative;
+}
+main[name=banner-second] .carousel-content .play_now_container{
+    position: absolute;
+    bottom: var(--claim-bottom);
+    left: var(--claim-left);
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+main[name=banner-second] .carousel-content .play_now_container a:nth-child(1){
+    /*! transform: scale(0.9); */
+    width:var(--claim-w);
+}
+main[name=banner-second] .carousel-content .play_now_container a:nth-child(1):hover{
+    transform: scale(1.01);
+}
+main[name=banner-second] .carousel-content .play_now_container a:nth-child(2){
+    text-decoration: underline;
+    color: white;
+    font-size:var(--terms-fs);
+}
+main[name=banner-second] .splide__slide{
+    width: 1400px!important;
+}
+main[name=banner-second] .carousel-content .gold-bag{
+    position: absolute;
+    bottom:-5px;
+    right:var(--bag-left);
+}
+main[name=banner-second] .carousel-content .gold-bag img{
+    height:var(--bag-h);
+    width: var(--bag-w);
+}
+
+main[name=banner-second] .carousel-content .bonus{
+    position: absolute;
+    display:grid;
+    z-index: 1;
+    left:var(--bonus-left);
+    bottom:var(--bonus-bottom);
+    
+}
+main[name=banner-second] .carousel-content .bonus img{
+    width:var(--bonus-w);
+}
+
+.splide__track{
+  margin: auto;
+  width:1400px;
+}
