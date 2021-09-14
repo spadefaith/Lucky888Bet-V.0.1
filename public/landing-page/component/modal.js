@@ -27,6 +27,11 @@ Cakes.create('modal', '#modal', {
             handler(e){
                 this.fire.destroy();
             }        
+        },
+        pop:{
+            destroy(e){
+                this.fire.destroy();
+            }
         }
     },
 })

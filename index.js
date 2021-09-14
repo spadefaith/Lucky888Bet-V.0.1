@@ -3,7 +3,7 @@ const cors = require('cors');
 const multer = require('multer');
 const device = require('express-device');
 
-const port = process.env.PORT || 7768;
+const port = process.env.PORT || 7766;
 const app = express();
 
 
