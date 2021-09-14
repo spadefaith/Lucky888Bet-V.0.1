@@ -1548,43 +1548,7 @@ main[name=terms] .terms-and-conditions h1{
 main[name=terms] .terms-and-conditions li ol{
     padding: 0px 0px 0px 50px;
 }
-@media (min-width: 320px) { 
 
-}
-
-
-@media (min-width: 420px) { 
-
-}
-
-@media (min-width: 576px) { 
-
-}
-
-@media (min-width: 765px) { 
-
-}
-@media (min-width: 868px) { 
-
-}
-
-
-@media (min-width:963px) { 
-
-}
-
-
-
-
-@media (min-width: 1225px) { 
-    
-
-}
-
-
-@media (min-width: 1400px) {
-
-}
 [name=sidebar]{
     position:fixed;
     top:0;
@@ -1669,14 +1633,27 @@ body{
     width: 90%;
     text-align: center;
 }
-
-
 .nav-right{
     display:grid;
-    
+    --display:inherit;
+    --btn-size:1.25rem;
 }
+@media (min-width: 1px) and (max-width:614px) { 
+    .nav-right{
+        --display:none;
+        --btn-size:0.8rem;
+    }
+}
+
+
 .nav-right div:nth-child(1){
-    
+    text-align: right;
+}
+.nav-right div:nth-child(1) a{
+    font-size: var(--btn-size);
+}
+.nav-right div:nth-child(1) img{
+    display: var(--display);
 }
 .nav-right>div:nth-child(2){
     display: grid;
@@ -1689,6 +1666,7 @@ body{
 .nav-right>div:nth-child(2)>a{
     color: white;
     font-size: 14px;
+    display: var(--display);
     
 }
 .nav-right .language-support{
