@@ -1,0 +1,206 @@
+main{
+    --game-w:unset;
+    --game-m: 20px;
+    --grid-areas:"left right";
+    --grid-row-gap: 1rem;
+    --con-m:0rem 0rem;;
+    --fill-h:171px;
+    
+    
+}
+
+footer{
+    --flow:column;
+    --just:right;
+}
+
+
+@media (max-width: 319px){
+    main{
+        --game-w:120px;
+        --game-m:10px;
+        --grid-areas:"left" "right";
+        --con-m:0.5rem 1rem;
+        --fill-h:0x;
+    }
+}
+
+
+@media (min-width: 320px) and (max-width:419px) { 
+    main{
+        --game-w:120px;
+        --game-m:10px;
+        --grid-areas:"left" "right";
+        --con-m:0.5rem 1rem;
+        --fill-h:0x;
+    }
+}
+
+@media (min-width: 420px) and (max-width:799px) { 
+    main{
+        --game-w:120px;
+        --game-m:10px;
+        --grid-areas:"left" "right";
+        --con-m:0.5rem 1rem;
+        --fill-h:0x;
+        
+    }
+    footer{
+        --flow:row;
+        --just:center;
+        padding: 1rem 0rem;
+    }
+}
+
+
+@media (min-width: 800px) and (max-width:916px) { 
+    main{
+        --game-w:120px;
+        --game-m:10px;
+        --grid-areas:"left" "right";
+        --con-m:0.5rem 1rem;
+        --fill-h:0x;
+    }
+}
+
+@media (min-width: 917px) and (max-width:1215px) { 
+    main{
+        --game-w:130px;
+        --game-m:10px;
+
+    }
+}
+
+@media (min-width: 1216px) and (max-width:1218px) { 
+    main{
+        --game-w:150px;
+        --game-m:15px;
+    }
+}
+@media (min-width: 1219px) and (max-width:1399px) { 
+    main{
+        --game-w:150px;
+        --game-m:15px;
+    }
+}
+
+@media (min-width: 1400px) {
+    main{
+        --game-w:180px;
+        --game-m:15px;
+    }
+}
+
+
+
+
+body{
+    color:inherit
+}
+
+main{
+    background-image: url('../image/background.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+    min-height: 90vh;
+    padding:5rem 0rem
+}
+
+main a:hover img{
+    transform: scale(1.1);
+}
+
+footer{
+    background-color: #05211F!important;
+    color:white;
+}
+footer a{
+    color: white;
+}
+
+footer strong{
+    color: gold;
+}
+
+[name=game-container]{
+    display:grid;
+    grid-template-areas: var(--grid-areas);
+    grid-row-gap: var(--grid-row-gap);
+    margin:var(--con-m);
+    grid-column-gap: 1rem;
+}
+[name=classics]{
+    grid-area: left;
+}
+[name=variants]{
+    grid-area: right;
+
+}
+[name=classics] [name=games],
+[name=variants] [name=games]{
+    display:grid;
+    justify-items: center;
+    align-items: start;
+    grid-template-columns: repeat(auto-fill, minmax(var(--game-w), 1fr))
+}
+
+[name=classics] h1,
+[name=variants] h1{
+    color: yellow;
+}
+
+main a>img{
+    width: var(--game-w);
+    margin:var(--game-m);
+}
+.filler{
+    width: var(--game-w);
+    height: var(--fill-h);
+}
+.name{
+    display:flex;
+}
+.name >.line{
+    width: 4px;
+    background-color: red;
+    margin-right: 0.5rem;
+}
+.profile-container{
+    display: grid;
+    align-items: center;
+    grid-auto-flow: column;
+    grid-template-columns: max-content max-content 1fr;
+}
+
+
+
+/* #header.navbar{
+    background-color:#045A55!important;
+    background-image:linear-gradient(180deg,#045A55 0%,#045A56 60%,#045A65 100%)
+} */
+footer>.container>.footer-game-links{
+    display:grid;
+    grid-auto-flow: var(--flow);
+    grid-gap:1rem;
+}
+footer>.container>.footer-game-links .footer-right{
+    justify-self: var(--just);
+}
+footer>.container>.footer-game-links .footer-left{
+    display:grid;
+    grid-auto-flow: column;
+    align-content: center;
+    justify-items: center;
+}
+.navbar-brand>.navbar-item{
+    padding:2px 0px 2px 1rem;;
+    
+}
+.navbar-brand>.navbar-item img{
+    object-fit: fill;
+    object-position: center;
+    max-height: 100%;
+    height:50px;
+    width:50px;
+}
