@@ -26,7 +26,7 @@ app.use('/post', function(req, res, next){
         req.body
 });
 
-app.use('/games/e-bingo/fortune30',express.static('./public/ebingo/fortune30'));
+app.use('/games/e-bingo/:game',express.static('./public/game-container'));
 
 app.post('/api/auth/create', require('./router').register);
 app.post('/api/auth/get', require('./router').login);
