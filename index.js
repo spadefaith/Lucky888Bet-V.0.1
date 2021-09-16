@@ -21,11 +21,20 @@ app.use('/games/e-bingo', function(req, res, next){
         next();
 },express.static('./public/lobby'));
 
+
+app.use('/post', function(req, res, next){
+        req.body
+});
+
 app.use('/games/e-bingo/fortune30',express.static('./public/ebingo/fortune30'));
 
 app.post('/api/auth/create', require('./router').register);
 app.post('/api/auth/get', require('./router').login);
 
+
+// app.post('/stat', function(req, res, next){
+//         console.log(req.body);
+// });
 
 app.use('/asset', require('./asset'));
 

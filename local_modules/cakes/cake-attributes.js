@@ -819,7 +819,6 @@ Attrib.prototype._compileSwitch = function(switchs, component, isStatic){
 
 Attrib.prototype._compileBind = function(elModels, component, isStatic){
     return new Promise((res)=>{
-
         if (!elModels.length) {res();return;};
         let els = this._static(component)(elModels, isStatic);
         if (!els.length){res();return;}

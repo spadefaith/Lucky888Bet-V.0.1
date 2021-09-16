@@ -57,7 +57,7 @@
     <main>
       <div name='modal-container'></div>
       <div class='container'>
-        <div name='game-container' id=lobby>
+        <div name='game-container' id=lobby data-component='lobby' data-event='click'>
           <div name='classics'>
             <div>
               <div class='name'>
@@ -67,7 +67,7 @@
               <!-- add the links of games in here -->
               <div name=games>
                 <a><img src="image/classics/bingo-peryahan.png" alt="" class=""></a>
-                <a href='https://3.133.4.140/games/e-bingo/fortune30/'><img src="image/classics/fortune-30.png" alt="" class=""></a>
+                <a><img data-role='game' data-name='fortune30' src="image/classics/fortune-30.png" alt="" class=""></a>
                 <a> <img src="image/classics/gold-farm.png" alt="" class=""></a>
                 <a><img src="image/classics/golden-era.png" alt="" class=""></a>
                 <a><img src="image/classics/pirate-babes.png" alt="" class=""></a>
@@ -112,6 +112,26 @@
           </div>
       </div>
     </footer>
+
+    <template id='frame'>
+      <!-- <iframe data-bind='src:game_path' width=800px height=800px style='border:1px solid yellow'></iframe> -->
+      <iframe src='https://3.133.4.140/games/e-bingo/fortune30' width=800px height=800px style='border:1px solid yellow'></iframe>
+    </template>
+
+    <template id='modal'>
+      <div class="modal is-active">
+        <div class="modal-background"></div>
+        <div class="modal-content" data-container='content'></div>
+        <button data-event='click:destroy' class="modal-close is-large" aria-label="close"></button>
+      </div>
+    </template>
+
+    <script src='./scripts/bundled-min.js'></script>
+
+    <script src='./components/header.js'></script>
+    <script src='./components/frame.js'></script>
+    <script src='./components/lobby.js'></script>
+    <script src='./components/modal.js'></script>
 
     <script>
       (function(){
