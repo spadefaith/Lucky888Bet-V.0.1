@@ -5,15 +5,19 @@ const device = require('express-device');
 const cherio = require('cherio');
 const fs = require('fs');
 
+
+// const helmet = require('helmet');
+
 const port = process.env.PORT || 7766;
 const app = express();
-
 
 
 app.use(device.capture());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
 app.use(cors());
+
+// app.use(helmet.frameguard({action:'deny'}));
 
 
 // app.use('/', express.static('./public/desktop1'));
@@ -29,15 +33,22 @@ app.use('/post', function(req, res, next){
 });
 
 app.use('/games/e-bingo/:game',function(req, res, next){
-        let html = './public/game-container/index.html';
-        let $ = cherio.load(html);
-        $('iframe').src = 'https://www.youtube.com/';
+        let path = './public/game-container/index.html';
+        fs.readFile(path, 'utf-8', function(err, html){
+                let $ = cherio.load(html);
+                $('iframe').attr('src', 'http://localhost:7777/');
+                
+          
+                fs.writeFile(path, $.html(), function(err){
+                        if (err){
+                            console.log(err);
+                        }
+                        //change the html;
+                        // res.setHeader('Content-Encoding', 'gzip');
+                        next();
+                });
+        });
         
-        console.log($.html());
-
-
-        //change the html;
-        next();
 }, express.static('./public/game-container'));
 
 app.post('/api/auth/create', require('./router').register);

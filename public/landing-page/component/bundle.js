@@ -45,7 +45,7 @@
                 this.$cache.get('isValidAge').then(r=>{
                     if (!r){
                         setTimeout(()=>{
-                            this.fire(function renderPop(){});
+                            this.fire('renderPop');
                         },1000);
                     };
                 });
@@ -90,7 +90,7 @@
                     autoplay:true,
                     interval:5000,
                     focus:'center',
-                    // width:'1146px',
+                    width:'1900px',
                     // height:'320px',
                 }).mount();
     
@@ -232,63 +232,8 @@
             }
         },
     });
-    Cakes.create('header', '#header', {
-        toggle:{
-            burger:{
-                sel:'[name=burger]', cls:'is-active',
-            }
-        },
-        handlers:{
-            burger(e){
-                this.toggler('burger');
-            },
-            click(e){
-                let role = e.target.dataset.role;
-                if (role){
-                    let fn;
-                    this.fire(function validateAge(){});
-                };
-            }
-        },
-        subscribe:{},
-    });
-    Cakes.create('modal', '#modal', {
-        root:'[name=modal-container]',
-        handlers:{
-            destroy(e){
-                this.reset();
-            },
-            isConnected(e){
-                let {element, emit:{trigger}} = e;
-                let fn = this.utils.createFn('render'+trigger);
-                this.fire(fn);
-            },
-        },
-        subscribe:{
-            'render-modal':{
-                components:['header'],
-                handler(e){
-                    this.render({hashed:true, emit:{trigger:e}});
-                },
-            },
-            app:{
-                renderPop(e){
-                    this.render({hashed:true, emit:{trigger:'pop'}});
-                }
-            },
-            destroyModal:{
-                components:['pop'],
-                handler(e){
-                    this.fire.destroy();
-                }        
-            },
-            pop:{
-                destroy(e){
-                    this.fire.destroy();
-                }
-            }
-        },
-    });
+    
+
     Cakes.create('model-remote', null, {
         type:'model',
         handlers:{},
@@ -304,12 +249,13 @@
             destroy(e){
                 this.reset();
             },
+            _destroy(e){},
             click(e){
                 let target = e.target;
                 console.log(target.dataset.name == 'yes');
                 if (target.dataset.name == 'yes'){
-                    this.fire(function validateAge(){});
-                    this.fire(function destroyModal(){});
+                    this.fire('validateAge');
+                    this.fire('destroyModal');
                 } else if (target.dataset.name == 'no'){
                     console.log('no valid age');
                 };
@@ -321,6 +267,7 @@
                     this.fire.destroy();
                 },
                 renderpop(e){
+                    console.log('pop is rendered')
                     this.render();
                 }
             }

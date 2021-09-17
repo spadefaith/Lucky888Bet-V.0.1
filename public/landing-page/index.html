@@ -107,7 +107,7 @@
     
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css' rel='stylesheet'>
 
     <link rel='stylesheet' href='./styles/main1.css'>
 
@@ -147,7 +147,7 @@
                         <img src='./images/pagcor-header.png'>
                         <img src='./images/age-restrict-header.png'>
                         <a class='button is-default is-medium' data-role='sign-up' href='http://qa.bingorepublic.com.ph/registration'>Sign Up</a>
-                        <a class='button is-success is-medium' data-role='login' href='http://qa.bingorepublic.com.ph/login'>Log In</a>
+                        <a class='button is-success is-medium' data-role='login' data-event='click:login'>Log In</a>
                     </div>
                     <div>
                         <a href='http://qa.bingorepublic.com.ph/login'>Can't access your account?</a>
@@ -636,7 +636,7 @@
             <img src='./images/pop.png'>
             <div class='buttons' >
                 <a class='button is-success' data-event='click' data-name='yes' href='http://qa.bingorepublic.com.ph/registration'>I AM OVER 21 YEARS OLD</a>
-                <a class='button is-default' data-name='no' data-event='click:destroy'>EXIT</a>
+                <a class='button is-default' data-name='no' data-event='click:_destroy'>EXIT</a>
             </div>
         </div>
     </template>
@@ -699,27 +699,54 @@
         </section>
     </template>
 
-    <template id='login-form'>
-        <section class='login-form'>
-            <form name='form' data-animate='ns:form' data-container='form'>
-              <div class="mb-3" >
-                <label for="username" class="form-label">User Name</label>
-                <input name="username" type=text class="form-control" id="username" placeholder=username>
-              </div>
-              <div class="mb-3"  >
-                <label for="password" class="form-label">Password</label>
-                <input name="password" type=text class="form-control" id="password" placeholder=password>
-              </div>
-              <div class="mb-3"  >
-                <label for="Security Pin" class="form-label">Security Pin</label>
-                <input name=otp type=text class="form-control" id=otp placeholder='security pin'>
-              </div>
-              <div data-event='click'>
-                <button class='btn btn-primary'>Cancel</button>
-                <button class='btn btn-secondary'>Login</button>
-              </div>
-            </form>
-        </section>
+    <template id='login'>
+        <div class='box content'>
+            <div class='head'>
+                <p>Welcome to</p>
+                <img src='./images/logo-header.png'>
+                <p>Play your favorite online games whenever you are.</p>
+                <p></p>
+            </div>
+            <form >
+                <div class="field">
+                  <label class="label">Username</label>
+                  <div class="control has-icons-left has-icons-right">
+                    <input class="input" type="text" placeholder="user name">
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-user"></i>
+                    </span>
+                    <span class="icon is-small is-right">
+                      <i class="fas fa-check"></i>
+                    </span>
+                  </div>
+                  <!-- <p class="help is-success">This username is available</p> -->
+                </div>
+                
+                <div class="field">
+                  <label class="label">Password</label>
+                  <div class="control has-icons-left has-icons-right">
+                    <input class="input" type="email" placeholder="password">
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-envelope"></i>
+                    </span>
+                    <span class="icon is-small is-right">
+                      <i class="fas fa-exclamation-triangle"></i>
+                    </span>
+                  </div>
+                  <!-- <p class="help is-danger">This email is invalid</p> -->
+                </div>
+      
+                <div class="field is-grouped mt-5">
+                  <div class="control">
+                    <button class="button is-success">Submit</button>
+                  </div>
+                  <div class="control">
+                    <button class="button is-link is-default">Cancel</button>
+                  </div>
+                </div>
+          </form>
+        </div>
+
     </template>
 
 
@@ -748,6 +775,9 @@
     <script src='./scripts/bundled-min.js'></script>
 
     <script src='component/bundle.js'></script>
+    <script src='component/modal.js'></script>
+    <script src='component/login-form.js'></script>
+    <script src='component/header.js'></script>
 
 
  <script>

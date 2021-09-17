@@ -704,7 +704,7 @@ main[name=banner]{
     --claim-left: 15%;
     --bottom-m:0px;
     --banner-w:max-content;
-    --banner-h:max-content;
+    --banner-h:680px;
     --claim-bottom:15%;
     --claim-w:351px;
     --terms-fs:18px;
@@ -972,6 +972,7 @@ main[name=banner-second] .carousel-content .bonus{
 }
 main[name=banner-second] .carousel-content .bonus img{
     width:var(--bonus-w);
+  
 }
 
 .splide__track{
@@ -1705,4 +1706,116 @@ body{
     margin-top:-100px;
     opacity: 0.5;
     box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.2);
+}
+.mt-1{
+    margin-top:0.25rem;
+}
+.mt-2{
+    margin-top:0.5rem;
+}
+.mt-3{
+    margin-top:0.75rem;
+}
+.mt-4{
+    margin-top:1rem;
+}
+.mt-5{
+    margin-top:1.25rem;
+}
+.mt-6{
+    margin-top:1.5rem;
+}
+.mt-7{
+    margin-top:1.75rem;
+}
+.mt-8{
+    margin-top:2rem;
+}
+
+.mb-1{
+    margin-top:0.25rem;
+}
+.mb-2{
+    margin-top:0.5rem;
+}
+.mb-3{
+    margin-top:0.75rem;
+}
+.mb-4{
+    margin-top:1rem;
+}
+.mb-5{
+    margin-top:1.25rem;
+}
+.mb-6{
+    margin-top:1.5rem;
+}
+.mb-7{
+    margin-top:1.75rem;
+}
+.mb-8{
+    margin-top:2rem;
+}
+
+.ml-1{
+    margin-top:0.25rem;
+}
+.ml-2{
+    margin-top:0.5rem;
+}
+.ml-3{
+    margin-top:0.75rem;
+}
+.ml-4{
+    margin-top:1rem;
+}
+.ml-5{
+    margin-top:1.25rem;
+}
+.ml-6{
+    margin-top:1.5rem;
+}
+.ml-7{
+    margin-top:1.75rem;
+}
+.ml-8{
+    margin-top:2rem;
+}
+
+.mr-1{
+    margin-top:0.25rem;
+}
+.mr-2{
+    margin-top:0.5rem;
+}
+.mr-3{
+    margin-top:0.75rem;
+}
+.mr-4{
+    margin-top:1rem;
+}
+.mr-5{
+    margin-top:1.25rem;
+}
+.mr-6{
+    margin-top:1.5rem;
+}
+.mr-7{
+    margin-top:1.75rem;
+}
+.mr-8{
+    margin-top:2rem;
+}
+.modal .modal-content .head{
+    text-align: center;
+}
+.modal .modal-content .head p{
+    margin-bottom: 0px;
+}
+.modal .modal-content .head p:nth-child(1){
+    font-size:1.5rem;
+    font-weight: 550;
+}
+.modal .modal-content .head p:nth-child(3){
+    margin-bottom: 1.5rem;
 }

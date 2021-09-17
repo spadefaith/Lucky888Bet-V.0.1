@@ -213,3 +213,103 @@ iframe{
     height: 100%;
     
 }
+
+.mt-1{
+    margin-top:0.25rem;
+}
+.mt-2{
+    margin-top:0.5rem;
+}
+.mt-3{
+    margin-top:0.75rem;
+}
+.mt-4{
+    margin-top:1rem;
+}
+.mt-5{
+    margin-top:1.25rem;
+}
+.mt-6{
+    margin-top:1.5rem;
+}
+.mt-7{
+    margin-top:1.75rem;
+}
+.mt-8{
+    margin-top:2rem;
+}
+
+.mb-1{
+    margin-top:0.25rem;
+}
+.mb-2{
+    margin-top:0.5rem;
+}
+.mb-3{
+    margin-top:0.75rem;
+}
+.mb-4{
+    margin-top:1rem;
+}
+.mb-5{
+    margin-top:1.25rem;
+}
+.mb-6{
+    margin-top:1.5rem;
+}
+.mb-7{
+    margin-top:1.75rem;
+}
+.mb-8{
+    margin-top:2rem;
+}
+
+.ml-1{
+    margin-top:0.25rem;
+}
+.ml-2{
+    margin-top:0.5rem;
+}
+.ml-3{
+    margin-top:0.75rem;
+}
+.ml-4{
+    margin-top:1rem;
+}
+.ml-5{
+    margin-top:1.25rem;
+}
+.ml-6{
+    margin-top:1.5rem;
+}
+.ml-7{
+    margin-top:1.75rem;
+}
+.ml-8{
+    margin-top:2rem;
+}
+
+.mr-1{
+    margin-top:0.25rem;
+}
+.mr-2{
+    margin-top:0.5rem;
+}
+.mr-3{
+    margin-top:0.75rem;
+}
+.mr-4{
+    margin-top:1rem;
+}
+.mr-5{
+    margin-top:1.25rem;
+}
+.mr-6{
+    margin-top:1.5rem;
+}
+.mr-7{
+    margin-top:1.75rem;
+}
+.mr-8{
+    margin-top:2rem;
+}
