@@ -6,7 +6,8 @@ main{
     --con-m:0rem 0rem;;
     --fill-h:171px;
     
-    
+    --container-width:200px;
+    --container-gap:1rem;
 }
 
 footer{
@@ -33,6 +34,9 @@ footer{
         --grid-areas:"left" "right";
         --con-m:0.5rem 1rem;
         --fill-h:0x;
+        
+        --container-width: 0%;
+        --container-gap:5%;
     }
 }
 
@@ -43,7 +47,8 @@ footer{
         --grid-areas:"left" "right";
         --con-m:0.5rem 1rem;
         --fill-h:0x;
-        
+        --container-width: 5%;
+        --container-gap:5%;
     }
     footer{
         --flow:row;
@@ -80,14 +85,26 @@ footer{
 @media (min-width: 1219px) and (max-width:1399px) { 
     main{
         --game-w:150px;
-        --game-m:15px;
+        --game-m:15px;http://localhost:7766/games/e-bingo/image/variants/bingo-swertres.png
     }
 }
-
+@media (min-width: 1400px) and (max-width:2000px){
+    main{
+        --container-width: 10%;
+        --container-gap:5%;
+    }
+}
+@media (min-width:2000px) {
+    main{
+        --container-width: 25%;
+        --container-gap:5%;
+    }
+}
 @media (min-width: 1400px) {
     main{
         --game-w:180px;
         --game-m:15px;
+
     }
 }
 
@@ -111,6 +128,7 @@ main a:hover img{
     transform: scale(1.1);
 }
 
+
 footer{
     background-color: #05211F!important;
     color:white;
@@ -128,7 +146,8 @@ footer strong{
     grid-template-areas: var(--grid-areas);
     grid-row-gap: var(--grid-row-gap);
     margin:var(--con-m);
-    grid-column-gap: 1rem;
+    grid-column-gap:var(--container-gap);
+    
 }
 [name=classics]{
     grid-area: left;
@@ -148,6 +167,10 @@ footer strong{
 [name=classics] h1,
 [name=variants] h1{
     color: yellow;
+}
+
+main>.container{
+    max-width: calc(100vw - var(--container-width))!important;
 }
 
 main a>img{
