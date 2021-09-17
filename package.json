@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cherio": "^1.0.0-rc.2",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-device": "^0.4.2",

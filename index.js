@@ -2,6 +2,8 @@ const express = require('express');
 const cors = require('cors');
 const multer = require('multer');
 const device = require('express-device');
+const cherio = require('cherio');
+const fs = require('fs');
 
 const port = process.env.PORT || 7766;
 const app = express();
@@ -26,15 +28,27 @@ app.use('/post', function(req, res, next){
         req.body
 });
 
-app.use('/games/e-bingo/:game',express.static('./public/game-container'));
+app.use('/games/e-bingo/:game',function(req, res, next){
+        let html = './public/game-container/index.html';
+        let $ = cherio.load(html);
+        $('iframe').src = 'https://www.youtube.com/';
+        
+        console.log($.html());
+
+
+        //change the html;
+        next();
+}, express.static('./public/game-container'));
 
 app.post('/api/auth/create', require('./router').register);
 app.post('/api/auth/get', require('./router').login);
 
 
-// app.post('/stat', function(req, res, next){
-//         console.log(req.body);
-// });
+app.post('/stat', function(req, res, next){
+        console.log(req.body);
+        res.json({status:1});
+        next()
+});
 
 app.use('/asset', require('./asset'));
 
