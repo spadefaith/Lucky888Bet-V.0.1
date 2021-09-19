@@ -12,6 +12,9 @@ router.get('/swal.js', function(req, res, next){
 });
 
 router.get('/bundled.js', function(req, res, next){
+    res.sendFile(__dirname+'/local_modules/cakes/bundled.js');
+});
+router.get('/bundled-min.js', function(req, res, next){
     res.sendFile(__dirname+'/local_modules/cakes/bundled-min.js');
 });
 

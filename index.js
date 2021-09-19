@@ -21,24 +21,27 @@ app.use(cors());
 
 
 // app.use('/', express.static('./public/desktop1'));
-app.use('/', express.static('./public/landing-page'));
-app.use('/games/e-bingo', function(req, res, next){
-        res.cookie('games', 'e-bingo');
-        next();
-},express.static('./public/lobby'));
+app.use('/',function(req, res, next){
+        let isLoggedIn = true; 
+        if (isLoggedIn){
+
+                express.static('./public/landing-page-user')(req, res, next);
+        }else {
+                express.static('./public/landing-page')
+        }
+} );
+
+app.use('/games/e-bingo',express.static('./public/lobby'));
 
 
-app.use('/post', function(req, res, next){
-        req.body
-});
-
+app.use('/login',require('./router/create-token'),require('./router/user-logged-in') );
+app.use('/logout',require('./router/reset-token'),express.static('./public/landing-page'));
+ 
 app.use('/games/e-bingo/:game',function(req, res, next){
         let path = './public/game-container/index.html';
         fs.readFile(path, 'utf-8', function(err, html){
                 let $ = cherio.load(html);
-                $('iframe').attr('src', 'http://localhost:7777/');
-                
-          
+                $('iframe').attr('src', 'http://localhost:7777/'); 
                 fs.writeFile(path, $.html(), function(err){
                         if (err){
                             console.log(err);
@@ -50,10 +53,6 @@ app.use('/games/e-bingo/:game',function(req, res, next){
         });
         
 }, express.static('./public/game-container'));
-
-app.post('/api/auth/create', require('./router').register);
-app.post('/api/auth/get', require('./router').login);
-
 
 app.post('/stat', function(req, res, next){
         console.log(req.body);

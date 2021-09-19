@@ -3283,7 +3283,7 @@ Cake.prototype.addEvent = function (static, multiple){
     };
     let component = this.name;
     function notify(event, component, isPrevent){
-        return function(e){
+        return function(e){ 
             if (isPrevent){
                 e.preventDefault();
             };
@@ -3303,7 +3303,7 @@ Cake.prototype.addEvent = function (static, multiple){
             let store = el.Ref().get('__cake__events');
             
             if (!store[cb]){
-                let isPrevented = event.substring(0,1) == '~';
+                let isPrevented = !(event.substring(0,1) == '~');
                 // console.log(isPrevented, event);
                 el.addEventListener(event, notify(cb, component, isPrevented), true);
                 store[cb] = true;
@@ -3814,7 +3814,7 @@ Cakes.prototype.create = function(name, template, options){
         //html getter;
     }).then(()=>{
         component.fire = (function(){
-            function fire(fn){
+            function fire(name, variable){
                 /**
                  * the static fn of fire are those declared in handlers;
                  * fire is also a function that accepts handler fn, that is not declared in handlers;
@@ -3822,16 +3822,23 @@ Cakes.prototype.create = function(name, template, options){
                  * the usage of fire is to manually run the notify, it tells notify what handler has been fired;
                  * so that the notify will make a variable from it, to be feed to subscriber to that;
                  */
+
+                variable = !variable?null:typeof variable == 'function'?variable.bind(component)():(function(){return variable}).bind(component)();
+
+                let o = {
+                    [name]:()=>{
+                        return variable;
+                    }
+                };
+                fn = o[name].bind(component);
                 if (typeof fn == 'function'){
-                    let name = fn.name;
-                    fn = fn.bind(component);
+                    fn.name = name;
                     fn.original = name;
                     fn.binded = component.name;
                     Cakes.Observer.registerHandlers({[name]: fn}, component.name);
                     // const awaitNotify = Cakes.Observer.notify(component.name, name, {});
                     // component.await[name] = awaitNotify;
                     // return awaitNotify;
-
                     const notify = Cakes.Observer.notify(component.name, name, {}).then(()=>{
                         return Cakes.Observer.results[component.name][name];
                     });
