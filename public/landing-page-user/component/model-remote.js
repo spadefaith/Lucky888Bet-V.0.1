@@ -25,12 +25,22 @@ Cakes.create('model-remote', null, {
             this.utils.post('/login', {body:data}).then(r=>{
                 console.log(r);
             });
+        },
+        logout(e){
+            this.utils.post('/login',).then(r=>{
+                location.replace('/');
+            });
         }
     },
     subscribe:{
         'login-form':{
             submit(e){ 
                 this.fire.login(e);
+            }
+        },
+        'header':{
+            logout(e){
+                this.fire.logout();
             }
         }
     },

@@ -1,7 +1,8 @@
+require('dotenv').config();
 const jwt = require('jsonwebtoken');
 
 const resetToken = function(){
-    return token = jwt.sign({hello:'world'},'micro', { expiresIn: '0h' });
+    return token = jwt.sign({hello:'world'},process.env.SECRET, { expiresIn: '0h' });
     
 };
 

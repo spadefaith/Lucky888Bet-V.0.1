@@ -15,6 +15,9 @@ Cakes.create('header', '#header', {
             this.toggler('drop');
              console.log('e');
         },
+        logout(e){
+            this.fire('logout');
+        },  
         click(e){
             let role = e.target.dataset.role;
             if (role == 'signup'){

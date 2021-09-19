@@ -19,23 +19,33 @@ app.use(cors());
 
 // app.use(helmet.frameguard({action:'deny'}));
 
+let isLoggedIn = false;
 
 // app.use('/', express.static('./public/desktop1'));
-app.use('/',function(req, res, next){
-        let isLoggedIn = true; 
+app.use('/',require('./router/ensure-token'),function(req, res, next){
+        if (req.path == '/'){
+                isLoggedIn = (req.User.username && req.User.password);
+                // console.log(req.User);
+        };
         if (isLoggedIn){
 
                 express.static('./public/landing-page-user')(req, res, next);
         }else {
-                express.static('./public/landing-page')
-        }
+                Promise.resolve().then(()=>{
+                        
+                        // require('./router/store-token')(req, res, next);
+                }).then(()=>{
+                        express.static('./public/landing-page')(req, res, next);
+
+                })
+        };
 } );
 
 app.use('/games/e-bingo',express.static('./public/lobby'));
 
 
 app.use('/login',require('./router/create-token'),require('./router/user-logged-in') );
-app.use('/logout',require('./router/reset-token'),express.static('./public/landing-page'));
+app.use('/logout',require('./router/reset-token'), );
  
 app.use('/games/e-bingo/:game',function(req, res, next){
         let path = './public/game-container/index.html';

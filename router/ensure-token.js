@@ -1,33 +1,20 @@
 
 module.exports = function(req,res,next){
-    let referer = null;
+    let referer = 'bearer-not-secure';
+ 
+ 
     if (req.path == '/'){
-        referer = req.baseUrl;
-    };
-    if (req.baseUrl == '/api'){
-        referer = req.headers.referer;
-    }
-    
-    if (!referer){next(); return};
-    // console.log(req.path,12);
-    // console.log(referer,13)
-
-    let cookie = req.headers.cookie;
-    // console.log(cookie)
-
-    if (['/auth/validateAdmin', '/auth/registerUser'].includes(req.path)){
-        req.User = {password:'cedrick'};
-        next();
-    } else {
+        let cookie = req.headers.cookie;
+        // console.log(cookie); 
         require('../token/ensure-token')({cookie, referer}).then(user=>{
-            // console.log(user,17);
             req.User = user;
+            // console.log(user, 8);
             next();
         }).catch(err=>{
-            // console.log(err,22)
-            next(err);
+            // next(err);
+            next()
         });
-    }
-
-
-}
+    } else {
+        next();
+    };
+};

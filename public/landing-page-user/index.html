@@ -176,8 +176,7 @@
                                   <a class="dropdown-item"> Withdraw </a>
                                   <a class="dropdown-item"> VIP Club </a>
                                   <a class="dropdown-item"> Help </a>
-                                  <a href="/logout" class="dropdown-item"> Log Out </a>
-                                 
+                                  <a class="dropdown-item" data-event='click:logout'> Log Out </a> 
                               </div>
                             </div>
                           </div>
@@ -215,7 +214,7 @@
                 <div class='divider'></div>
             </div>
 
-            <main name='category' data-component='category'>
+            <main name='category' data-component='category' id=category>
                 <div class='game-category-container'>
                     <div class='game-category-item'>
                         <section class='first-level'>
@@ -226,7 +225,7 @@
                             <img class='category' src='./images/e-bingo.png'>
                         </div>
                         <div class='third-level'>
-                            <a target='_blank' href='http://localhost:7766/games/e-bingo/' class='button is-danger'>PLAY NOW</a>
+                            <a target='_blank' data-event='click:bingoLobby' class='button is-danger'>PLAY NOW</a>
                             <!-- <a target='_blank' href='https://3.133.4.140/' class='button is-danger'>PLAY NOW</a> -->
                         </div>
                     </div>
@@ -796,6 +795,7 @@
     <script src='component/bundle.js'></script>
     <script src='component/modal.js'></script>
     <script src='component/login-form.js'></script>
+    <script src='component/category.js'></script>
     <script src='component/header.js'></script>
     <script src='component/model-remote.js'></script>
 

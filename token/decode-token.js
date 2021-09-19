@@ -21,9 +21,11 @@ const decodeToken = function({referer, cookie}){
         // console.log(bearer)
         try {
             const token = _getToken(cookie, referer);
+ 
             if (!token){rej(new Error(`no token`)); return};
             let decoded = jwt.decode(token);
-            res(decoded);
+            // console.log(decoded)
+            res(decoded, 'decode-token');
         } catch(err){ rej(err) };
     });
 };

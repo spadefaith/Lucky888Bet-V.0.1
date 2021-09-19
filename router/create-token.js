@@ -14,8 +14,10 @@ module.exports = function (req, res, next){
             let loggedin = users.getById(d._id);
             if (loggedin != undefined){
                 throw new Error(`the user is already logged in`);
-            } else {
-                let token = jwt.sign({role:d.role, _id:d._id},'micro', { expiresIn: '8h' });
+            } else { 
+                let token = jwt.sign(result,process.env.SECRET, { expiresIn: '8h' });
+                // console.log(jwt.decode(token), 19);
+                // console.log(token, 19)
                 res.cookie('bearer-secure', token, {
                     secure: true, 
                     httpOnly: true,

@@ -17,11 +17,13 @@ Cakes.create('modal', '#modal', {
                 this.render({hashed:true, emit:{trigger:e}});
             },
         },
-        header:{
-            renderLogin(e){
-                this.render({hashed:true, emit:{trigger:e}});
+        renderLogin:{
+            components:['header','category'],
+            handler(e){
+                this.render({hashed:true, emit:{trigger:'login'}});
+
             }
-        },
+        }, 
         app:{
             renderPop(e){
                 // this.render({hashed:true, emit:{trigger:'pop'}});

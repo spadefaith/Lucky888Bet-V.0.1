@@ -196,7 +196,7 @@
                 <div class='divider'></div>
             </div>
 
-            <main name='category' data-component='category'>
+            <main name='category' data-component='category' id='category'>
                 <div class='game-category-container'>
                     <div class='game-category-item'>
                         <section class='first-level'>
@@ -207,7 +207,7 @@
                             <img class='category' src='./images/e-bingo.png'>
                         </div>
                         <div class='third-level'>
-                            <a target='_blank' href='http://localhost:7766/games/e-bingo/' class='button is-danger'>PLAY NOW</a>
+                            <a target='_blank' data-event='click:login' class='button is-danger'>PLAY NOW</a>
                             <!-- <a target='_blank' href='https://3.133.4.140/' class='button is-danger'>PLAY NOW</a> -->
                         </div>
                     </div>
@@ -221,7 +221,7 @@
                             <img class='category' src='./images/casino.png'>
                         </div>
                         <div class='third-level'>
-                            <button class='button is-success'>PLAY NOW</button>
+                            <button class='button is-success' data-event='click:login'>PLAY NOW</button>
                         </div>
                     </div>
 
@@ -234,7 +234,7 @@
                             <img class='category' src='./images/e-sabong.png'>
                         </div>
                         <div class='third-level'>
-                            <button class='button is-warning'>PLAY NOW</button>
+                            <button class='button is-warning' data-event='click:login'>PLAY NOW</button>
                         </div>
                     </div>
 
@@ -247,7 +247,7 @@
                             <img class='category' src='./images/sportsbook.png'>
                         </div>
                         <div class='third-level'>
-                            <button class='button is-info'>PLAY NOW</button>
+                            <button class='button is-info' data-event='click:login'>PLAY NOW</button>
                         </div>
                     </div>
                 </div>
@@ -776,6 +776,7 @@
 
     <script src='component/bundle.js'></script>
     <script src='component/modal.js'></script>
+    <script src='component/category.js'></script>
     <script src='component/login-form.js'></script>
     <script src='component/header.js'></script>
     <script src='component/model-remote.js'></script>
