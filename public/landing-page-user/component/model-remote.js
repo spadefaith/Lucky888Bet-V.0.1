@@ -30,6 +30,14 @@ Cakes.create('model-remote', null, {
             this.utils.post('/login',).then(r=>{
                 location.replace('/');
             });
+        },
+        getPlayer(){
+            this.utils.get('/player').then(r=>{
+                return r.json();
+            }).then(r=>{
+                let enc = btoa(JSON.stringify(r));
+                location.replace(`${location.origin}/games/e-bingo/${enc}`);
+            });
         }
     },
     subscribe:{
@@ -41,6 +49,11 @@ Cakes.create('model-remote', null, {
         'header':{
             logout(e){
                 this.fire.logout();
+            }
+        },
+        category:{
+            getPlayer(){
+                this.fire.getPlayer();
             }
         }
     },

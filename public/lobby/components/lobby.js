@@ -7,6 +7,13 @@ Cakes.create('lobby', '#lobby',{
                 this.$cache.createOrUpdate('game', name);
                 this.fire('openModal');
             }
+        },
+        isConnected(){ 
+            let path = location.pathname;
+            let split = path.split('/');
+            let enc = split[3];
+            let dec = atob(enc); 
+            
         }
     },
     subscribe:{},

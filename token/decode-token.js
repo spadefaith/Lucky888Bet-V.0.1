@@ -7,7 +7,7 @@ function _getToken(cookie, referer){
     // console.log(split, referer)
     for (let s = 0; s < split.length; s++){
         let [p, _token] = split[s].split('=');
-        if (referer.includes(p)){
+        if (referer == p){
             token = _token;
             break;
         } else { continue };

@@ -11,13 +11,13 @@ module.exports = function(req, res, next){
         if (!referer){next(); return};
         // console.log(referer);
         let cookie = req.headers.cookie;
-        // console.log(cookie)
+ 
         require('../token/decode-token')({referer, cookie}).then(decoded=>{
             let {_id} = decoded;
-            // console.log(_id, 31);
-            // console.log(decoded, 1);
-            users.remove(_id);
+            // console.log(_id, 31); 
+            // users.remove(_id);
             // res.redirect('/')
+            // req.User
         });
     };
     next();

@@ -41,8 +41,12 @@ app.use('/',require('./router/ensure-token'),function(req, res, next){
         };
 } );
 
-app.use('/games/e-bingo',express.static('./public/lobby'));
+app.use('/games/e-bingo/:user',express.static('./public/lobby'));
 
+app.use('/player',require('./router/ensure-token'), function(req, res, next){
+        
+        res.json(req.User);
+});
 
 app.use('/login',require('./router/create-token'),require('./router/user-logged-in') );
 app.use('/logout',require('./router/reset-token'), );
