@@ -36,7 +36,10 @@ Cakes.create('model-remote', null, {
                 return r.json();
             }).then(r=>{
                 let enc = btoa(JSON.stringify(r));
-                location.replace(`${location.origin}/games/e-bingo/${enc}`);
+                let a = document.createElement('a');
+                a.href = `http://localhost:7778/${enc}`;
+                a.target = '_blank';
+                a.click();
             });
         }
     },

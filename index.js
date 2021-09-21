@@ -23,9 +23,8 @@ let isLoggedIn = false;
 
 // app.use('/', express.static('./public/desktop1'));
 app.use('/',require('./router/ensure-token'),function(req, res, next){
-        if (req.path == '/'){
+        if (req.path == '/' && !!req.User){
                 isLoggedIn = (req.User.username && req.User.password);
-                // console.log(req.User);
         };
         if (isLoggedIn){
 
@@ -44,7 +43,7 @@ app.use('/',require('./router/ensure-token'),function(req, res, next){
 app.use('/games/e-bingo/:user',express.static('./public/lobby'));
 
 app.use('/player',require('./router/ensure-token'), function(req, res, next){
-        
+        console.log(req.cookies, 46);
         res.json(req.User);
 });
 

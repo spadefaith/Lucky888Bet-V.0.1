@@ -1638,11 +1638,17 @@ body{
     display:grid;
     --display:inherit;
     --btn-size:1.25rem;
+    --display-grid:grid;
+    --img-w:50px;
+    --img-h:50px;
 }
 @media (min-width: 1px) and (max-width:614px) { 
     .nav-right{
         --display:none;
         --btn-size:0.8rem;
+        --display-grid:none;
+        --img-w: 35px;
+        --img-h: 35px;
     }
 }
 
@@ -1654,7 +1660,8 @@ body{
     font-size: var(--btn-size);
 }
 .nav-right div:nth-child(1) img{
-    display: var(--display);
+    width: var(--img-w);
+    height: var(--img-h);
 }
 .nav-right>div:nth-child(2){
     display: grid;
@@ -1671,7 +1678,7 @@ body{
     
 }
 .nav-right .language-support{
-    display:grid;
+    display: var(--display-grid);
     align-items: center;
     grid-auto-flow: column;
     grid-column-gap: 4px;
@@ -1818,4 +1825,7 @@ body{
 }
 .modal .modal-content .head p:nth-child(3){
     margin-bottom: 1.5rem;
+}
+.dropdown-menu{
+    z-index: 1000;
 }
