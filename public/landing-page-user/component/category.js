@@ -4,7 +4,7 @@ Cakes.create('category', '#category', {
            this.fire('getPlayer');
         },
     },
-    subscribe:{ 
+    subscribe:{
 
     },
 })

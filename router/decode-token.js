@@ -18,6 +18,7 @@ module.exports = function(req, res, next){
             // users.remove(_id);
             // res.redirect('/')
             // req.User
+            req.Token = decoded;
         });
     };
     next();

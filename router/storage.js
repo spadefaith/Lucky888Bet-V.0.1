@@ -1,8 +1,8 @@
 let _obj = {};
 
 
-exports.set = function(user){
-    _obj[user._id] = user;
+exports.set = function(id, user){
+    _obj[id] = user;
 };
 
 exports.getById = function(id){
@@ -17,6 +17,17 @@ exports.getByRole = function(role){
         };
     };
     return users;
+};
+exports.getByToken = function(token){
+    let user = null;
+    for (let id in _obj){
+        let v = _obj[id];
+        if (token == v.access_token){
+            user = v;
+            break;
+        };
+    };
+    return user;
 };
 
 exports.removeBySocket = function(socket){

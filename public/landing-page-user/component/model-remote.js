@@ -35,11 +35,12 @@ Cakes.create('model-remote', null, {
             this.utils.get('/player').then(r=>{
                 return r.json();
             }).then(r=>{
-                let enc = btoa(JSON.stringify(r));
+                let enc = r;
                 let a = document.createElement('a');
                 a.href = `http://localhost:7778/${enc}`;
                 a.target = '_blank';
                 a.click();
+                
             });
         }
     },
