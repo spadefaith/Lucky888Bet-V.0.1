@@ -68,9 +68,22 @@ app.use('/',require('./router/get-token'),function(req, res, next){
 app.use('/games/e-bingo/:user',express.static('./public/lobby'));
 
 app.use('/player',require('./router/get-token'), function(req, res, next){
-
+        console.log(req.Token, 71);
         res.json(req.Token);
 });
+
+app.get('/getPlayer', function(req, res, next){
+
+        let user = storage.getByToken(req.query.token);
+        // console.log(user, 78);
+        if (user){
+                res.json(user);
+        } else {
+                res.json({m:'message'});
+        };
+});
+
+
 
 // app.use('/login',require('./router/create-token'),require('./router/user-logged-in') );
 
@@ -83,6 +96,7 @@ app.use('/login', function(req, res, next){
         }).then(r=>{
                 return r.json();
         }).then(r=>{
+                // console.log(r, 99);
                 storage.set(r.user.id, r);
 
                 res.cookie('bearer-not-secure', r.access_token, {
@@ -100,7 +114,19 @@ app.use('/login', function(req, res, next){
                 next()
         });
 });
-app.use('/logout',require('./router/reset-token'), );
+app.use('/logout',function(req, res, next){
+        res.cookie('bearer-secure', 'reset', {
+                secure: true, 
+                httpOnly: true,
+                sameSite:'strict',
+        });
+        res.cookie('bearer-not-secure', 'reset', {
+                secure: false, 
+                httpOnly: false,
+                sameSite:'strict',
+        });
+        res.json({m:'s'})
+});
  
 app.use('/games/e-bingo/:game',function(req, res, next){
         let path = './public/game-container/index.html';

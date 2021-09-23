@@ -38,11 +38,14 @@
         },
         handlers:{
             isConnected(){
+
                 console.log('app is connected');
                 // setTimeout(()=>{
                 //     this.fire.renderSlides(null, true);
                 // }, 100)
+
                 this.$cache.get('isValidAge').then(r=>{
+                    console.log(r, !r);
                     if (!r){
                         setTimeout(()=>{
                             this.fire('renderPop');

@@ -24,7 +24,7 @@ Cakes.create('modal', '#modal', {
         },
         app:{
             renderPop(e){
-                // this.render({hashed:true, emit:{trigger:'pop'}});
+                this.render({hashed:true, emit:{trigger:'pop'}});
             }
         },
         destroyModal:{

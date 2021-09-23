@@ -2,6 +2,12 @@ Cakes.create('header', '#header', {
     toggle:{
         burger:{
             sel:'[name=burger]', cls:'is-active',
+        },
+        lang:{
+            sel:'.language-dropdown', cls:'is-active',
+        },
+        arr:{
+            sel:'.language-support a>img', cls:'is-active',
         }
     },
     handlers:{
@@ -17,6 +23,10 @@ Cakes.create('header', '#header', {
         },
         login(e){
             this.fire('renderLogin', 'login')
+        },
+        chooseLang(e){
+            this.toggler('lang');
+            this.toggler('arr');
         }
     },
     subscribe:{},

@@ -27,7 +27,7 @@ Cakes.create('model-remote', null, {
             });
         },
         logout(e){
-            this.utils.post('/login',).then(r=>{
+            this.utils.post('/logout',).then(r=>{
                 location.replace('/');
             });
         },
@@ -37,10 +37,9 @@ Cakes.create('model-remote', null, {
             }).then(r=>{
                 let enc = r;
                 let a = document.createElement('a');
-                a.href = `http://localhost:7778/${enc}`;
+                a.href = `http://localhost:7778/`;
                 a.target = '_blank';
                 a.click();
-                
             });
         }
     },

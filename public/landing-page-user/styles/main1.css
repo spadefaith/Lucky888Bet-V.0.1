@@ -1829,3 +1829,50 @@ body{
 .dropdown-menu{
     z-index: 1000;
 }
+
+.dep-container>h2{
+    text-align: center;
+}
+.dep-container{
+    --width:400px;
+    display:grid;
+    justify-content: center;
+    justify-items: center;
+    margin:auto;
+    grid-template-rows: max-content max-content 100px max-content;
+    align-items: center;
+}
+
+@media (max-width: 320px) { 
+    .dep-container{
+        --width:300px;
+
+    }
+}
+
+
+@media (min-width:321px) and (max-width: 420px) { 
+    .dep-container{
+        --width:300px;
+
+    }
+}
+
+@media (min-width:421px) and (max-width: 576px) { 
+    .dep-container{
+        --width:300px;
+
+    }
+}
+
+@media (min-width:577px) and (max-width: 765px) { 
+    .dep-container{
+        --width:300px;
+
+    }
+}
+
+.dep-container{
+    width:var(--width);
+
+}

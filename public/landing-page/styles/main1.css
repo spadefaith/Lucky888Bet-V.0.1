@@ -1681,10 +1681,10 @@ body{
 .nav-right .language-support a{
     transition: all 0.2s ease;
 }
-.nav-right .language-support:hover a>img{
+.nav-right .language-support a>img.is-active{
     transform: rotate(180deg);
 }
-.nav-right .language-support:hover .language-dropdown{
+.nav-right .language-support .language-dropdown.is-active{
     visibility: visible;
     opacity: 1;
     margin-top:30px;

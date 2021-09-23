@@ -112,6 +112,8 @@
     <link rel='stylesheet' href='./styles/main1.css'>
 
     <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=27475616-9fe3-47a6-aaa2-e106f0f7d033"> </script>
+
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </head>
 <body>
     <div class='loader-container'>
@@ -152,7 +154,7 @@
                     </div>
                     <div>
                         <a href='http://qa.bingorepublic.com.ph/login'>Can't access your account?</a>
-                        <div class='language-support'>
+                        <div class='language-support' data-event='click:language'>
                             <img src='./images/lang-world.png'>
                             <span>EN</span>
                             <a><img src='./images/lang-arrow.png'></a>
@@ -225,7 +227,7 @@
                             <img class='category' src='./images/e-bingo.png'>
                         </div>
                         <div class='third-level'>
-                            <a target='_blank' data-event='click:bingoLobby' class='button is-danger'>PLAY NOW</a>
+                            <a target='_blank' href='http://localhost:7778/' class='button is-danger'>PLAY NOW</a>
                             <!-- <a target='_blank' href='https://3.133.4.140/' class='button is-danger'>PLAY NOW</a> -->
                         </div>
                     </div>
@@ -650,11 +652,22 @@
     </template>
 
     <template id='pop'>
-        <div class='pop-container' data-animate='render:slideInDown'>
-            <img src='./images/pop.png'>
+        <div class='dep-container box' data-animate='render:slideInDown' style='display:grid;justify-content: center;'>
+            <h2 class='title is-4'>Do you want to fund your Account?</h2>
+
+            <div>
+                <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_wrrmnklf.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
+            </div>
+            <div>
+                <span>Register</span>
+                &nbsp>&nbsp
+                <span><strong>Deposit</strong></span>
+                &nbsp>&nbsp
+                <span>Play</span>
+            </div>
             <div class='buttons' >
-                <a class='button is-success' data-event='click' data-name='yes' href='http://qa.bingorepublic.com.ph/registration'>I AM OVER 21 YEARS OLD</a>
-                <a class='button is-default' data-name='no' data-event='click:_destroy'>EXIT</a>
+                <a class='button is-success' data-event='click' data-name='yes' href='http://qa.bingorepublic.com.ph/deposit'>Deposit</a>
+                <a class='button is-danger' data-name='no' data-event='click:_destroy'>Cancel</a>
             </div>
         </div>
     </template>
