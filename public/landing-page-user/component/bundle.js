@@ -252,7 +252,6 @@
             destroy(e){
                 this.reset();
             },
-            _destroy(e){},
             click(e){
                 let target = e.target;
                 console.log(target.dataset.name == 'yes');

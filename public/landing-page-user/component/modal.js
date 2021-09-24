@@ -34,8 +34,8 @@ Cakes.create('modal', '#modal', {
             }        
         },
         pop:{
-            _destroy(e){
-                this.fire.destroy();
+            destroy(e){
+                this.fire.destroy(null, false);
             }
         }
     },

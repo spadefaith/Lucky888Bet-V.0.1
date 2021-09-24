@@ -35,9 +35,9 @@ Cakes.create('model-remote', null, {
             this.utils.get('/player').then(r=>{
                 return r.json();
             }).then(r=>{
-                let enc = r;
+                let enc = btoa(r);
                 let a = document.createElement('a');
-                a.href = `http://3.133.4.140:5000/`;
+                a.href = `http://localhost:7778/loader/${enc}`;
                 a.target = '_blank';
                 a.click();
             });
