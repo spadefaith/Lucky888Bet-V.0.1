@@ -249,15 +249,16 @@
             destroy(e){
                 this.reset();
             },
-            _destroy(e){},
+            // _destroy(e){},
             click(e){
                 let target = e.target;
-                console.log(target.dataset.name == 'yes');
                 if (target.dataset.name == 'yes'){
                     this.fire('validateAge');
                     this.fire('destroyModal');
                 } else if (target.dataset.name == 'no'){
                     console.log('no valid age');
+                    // this.fire._destroy();
+                    this.fire.destroy();
                 };
             },
         },
@@ -267,7 +268,7 @@
                     this.fire.destroy();
                 },
                 renderpop(e){
-                    console.log('pop is rendered')
+                    console.log('pop is rendered');
                     this.render();
                 }
             }

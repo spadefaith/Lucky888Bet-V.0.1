@@ -1480,6 +1480,7 @@ Attrib.prototype.inject = function(el, component, isStatic=false){
     
         this.stat.handlers[handler.original] += 1;
     
+
         return prom.then(variable=>{
             // console.log(variable, _component);
             let execs = []; 
@@ -1492,8 +1493,8 @@ Attrib.prototype.inject = function(el, component, isStatic=false){
     
             if (this.subscribe[_component] && this.subscribe[_component][_event]){
                 let subscribe = this.subscribe[_component][_event];
-                
-      
+
+
                 // console.log(_component, _event, subscribe)
                 filter = !filter?true:(()=>{
                     subscribe = subscribe.filter(fn=>{

@@ -261,6 +261,7 @@
                     this.fire('destroyModal');
                 } else if (target.dataset.name == 'no'){
                     console.log('no valid age');
+                    this.fire._destroy();
                 };
             },
         },

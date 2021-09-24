@@ -2,6 +2,7 @@ Cakes.create('modal', '#modal', {
     root:'[name=modal-container]',
     handlers:{
         destroy(e){
+            // console.log(e);
             this.reset();
         },
         isConnected(e){
@@ -36,8 +37,11 @@ Cakes.create('modal', '#modal', {
             }        
         },
         pop:{
-            _destroy(e){
-                this.fire.destroy();
+            // _destroy(e){
+            //     this.fire.destroy();
+            // },          
+            destroy(e){
+                this.fire.destroy(null, false);
             }
         }
     },
