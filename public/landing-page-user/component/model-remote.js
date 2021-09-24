@@ -37,7 +37,7 @@ Cakes.create('model-remote', null, {
             }).then(r=>{
                 let enc = r;
                 let a = document.createElement('a');
-                a.href = `http://localhost:7778/`;
+                a.href = `http://3.133.4.140:5000/`;
                 a.target = '_blank';
                 a.click();
             });
