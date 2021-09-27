@@ -23,24 +23,6 @@ app.use(cors());
 let isLoggedIn = false;
 
 
-// app.use('/',require('./router/ensure-token'),function(req, res, next){
-//         if (req.path == '/' && !!req.User){
-//                 isLoggedIn = (req.User.username && req.User.password);
-//         };
-//         if (isLoggedIn){
-
-//                 express.static('./public/landing-page-user')(req, res, next);
-//         }else {
-//                 Promise.resolve().then(()=>{
-                        
-//                         // require('./router/store-token')(req, res, next);
-//                 }).then(()=>{
-//                         express.static('./public/landing-page')(req, res, next);
-
-//                 })
-//         };
-// } );
-
 app.use('/',require('./router/get-token'),function(req, res, next){
         let user = storage.getByToken(req.Token);
 
