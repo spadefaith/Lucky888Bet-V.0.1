@@ -104,7 +104,7 @@ app.use('/login', function(req, res, next){
         });
 });
 app.use('/logout',require('./router/get-token'),function(req, res, next){
-        fetch('http://localhost:7778/logout', {
+        fetch('http://3.133.4.140:5000/logout', {
                 method:'POST',
                 headers: {'Content-Type': 'application/json'},
                 body:JSON.stringify({token:req.Token}),
