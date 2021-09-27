@@ -1,8 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const multer = require('multer');
 const device = require('express-device');
-const cherio = require('cherio');
 const fs = require('fs');
 const fetch = require('node-fetch');
 const storage = require('./router/storage');
@@ -105,36 +103,34 @@ app.use('/login', function(req, res, next){
                 next()
         });
 });
-app.use('/logout',function(req, res, next){
-        res.cookie('bearer-secure', 'reset', {
-                secure: true, 
-                httpOnly: true,
-                sameSite:'strict',
+app.use('/logout',require('./router/get-token'),function(req, res, next){
+        fetch('http://localhost:7778/logout', {
+                method:'POST',
+                headers: {'Content-Type': 'application/json'},
+                body:JSON.stringify({token:req.Token}),
+        }).then(r=>{
+                return r.json();
+                
+        }).then(r=>{
+                
+                console.log(r);
+
+                res.cookie('bearer-secure', 'reset', {
+                        secure: true, 
+                        httpOnly: true,
+                        sameSite:'strict',
+                });
+                res.cookie('bearer-not-secure', 'reset', {
+                        secure: false, 
+                        httpOnly: false,
+                        sameSite:'strict',
+                });
+                res.json({m:'s'})
+        }).catch(err=>{
+                console.log(err.message);
         });
-        res.cookie('bearer-not-secure', 'reset', {
-                secure: false, 
-                httpOnly: false,
-                sameSite:'strict',
-        });
-        res.json({m:'s'})
 });
  
-app.use('/games/e-bingo/:game',function(req, res, next){
-        let path = './public/game-container/index.html';
-        fs.readFile(path, 'utf-8', function(err, html){
-                let $ = cherio.load(html);
-                $('iframe').attr('src', 'http://localhost:7777/'); 
-                fs.writeFile(path, $.html(), function(err){
-                        if (err){
-                            console.log(err);
-                        }
-                        //change the html;
-                        // res.setHeader('Content-Encoding', 'gzip');
-                        next();
-                });
-        });
-        
-}, express.static('./public/game-container'));
 
 app.post('/stat', function(req, res, next){
         // console.log(req.body);
