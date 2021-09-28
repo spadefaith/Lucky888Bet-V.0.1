@@ -37,7 +37,7 @@ Cakes.create('model-remote', null, {
             }).then(r=>{
                 let enc = btoa(r);
                 let a = document.createElement('a');
-                a.href = `http://3.133.4.140:5000/loader/${enc}`;
+                a.href = `${cfg.game}/loader/${enc}`;
                 a.target = '_blank';
                 a.click();
             });

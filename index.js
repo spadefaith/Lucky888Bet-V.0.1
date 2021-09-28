@@ -4,6 +4,7 @@ const device = require('express-device');
 const fs = require('fs');
 const fetch = require('node-fetch');
 const storage = require('./router/storage');
+const global = require('./global');
 
 // const helmet = require('helmet');
 
@@ -76,7 +77,7 @@ app.use('/login', function(req, res, next){
         };
 
 
-        fetch('https://qa.bingorepublic.com.ph/api/login', {
+        fetch(global.login, {
                 method:'POST',
                 body:JSON.stringify(cred),
                 headers: {'Content-Type': 'application/json'}
@@ -104,7 +105,7 @@ app.use('/login', function(req, res, next){
         });
 });
 app.use('/logout',require('./router/get-token'),function(req, res, next){
-        fetch('http://3.133.4.140:5000/logout', {
+        fetch(global.logout, {
                 method:'POST',
                 headers: {'Content-Type': 'application/json'},
                 body:JSON.stringify({token:req.Token}),

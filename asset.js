@@ -2,6 +2,10 @@ const express = require('express');
 const router = express.Router();
 
 
+router.get('/cfg.js', function(req, res, next){
+    res.sendFile(__dirname+'/global-client.js');
+});
+
 router.get('/fields.js', function(req, res, next){
     res.sendFile(__dirname+'/config/fields.js');
 });
