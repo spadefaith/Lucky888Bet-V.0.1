@@ -15,4 +15,4 @@
         signup:'http://qa.bingorepublic.com.ph/registration',
     });
     
-})(window, 'production');
+})(window, 'development');
