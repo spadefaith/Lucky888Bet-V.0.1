@@ -12,9 +12,9 @@
     };
 
     Object.assign(global.cfg, {
-        login:'http://qa.bingorepublic.com.ph/login',
-        signup:'http://qa.bingorepublic.com.ph/registration',
-        deposit:'http://qa.bingorepublic.com.ph/player/deposit',
+        login:'https://qa.bingorepublic.com.ph/login',
+        signup:'https://qa.bingorepublic.com.ph/registration',
+        deposit:'https://qa.bingorepublic.com.ph/player/deposit',
     });
     
 })(window, 'production');
