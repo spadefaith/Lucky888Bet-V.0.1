@@ -33,11 +33,27 @@ Cakes.create('model-remote', null, {
                 // location.replace(`${location.origin}/user`);
                 return r.json();
             }).then(r=>{
-                this.fire('renderOtpVerify', {payload:data, response:r});
+                if (r.status){
+                    this.fire('renderOtpVerify', {payload:data, response:r});
+                } else {
+                    this.fire('spinnerDestroy');
+                    this.fire('alertError', r.message);
+                }
             });
         },
-        verifyotp(o){
-            
+        verifyotp(data){
+            this.fire('spinnerRender');
+            this.utils.post('/verifyotp', {body:data}).then(r=>{
+                // location.replace(`${location.origin}/user`);
+                return r.json();
+            }).then(r=>{
+                if (r.status){
+                    location.replace(location.origin);
+                } else {
+                    this.fire('spinnerDestroy');
+                    this.fire('alertError', r.message);
+                }
+            });
         }
     },
     subscribe:{

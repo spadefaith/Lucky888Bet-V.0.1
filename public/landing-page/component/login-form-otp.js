@@ -8,7 +8,7 @@ Cakes.create('login-form-otp', '#login-otp', {
             this.$scope.reference = response.otp.ref_no;
             this.$scope.number = response.otp.sent_to;
 
-            // this.fire('spinnerDestroy');
+            this.fire('spinnerDestroy');
         },
         submit(e){
             let data = new FormData(e.target);

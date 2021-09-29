@@ -84,11 +84,8 @@ app.use('/login', function(req, res, next){
         }).then(r=>{
                 return r.json();
         }).then(r=>{
-                // console.log(r, 99);
                 r.user.username = cred.username;
-                // console.log(r, 99);
                 storage.set(r.user.id, r);
-
                 res.cookie('bearer-not-secure', r.access_token, {
                         secure: false, 
                         httpOnly: false,
@@ -137,6 +134,22 @@ app.post('/sendotp', function(req, res, next){
                 member_id:req.body.username,
         }
         fetch(global.sendotp, {
+                method:'POST',
+                headers: {'Content-Type': 'application/json'},
+                body:JSON.stringify(o),
+        }).then(r=>{
+                return r.json();
+        }).then(r=>{
+                res.json(r);
+        }).catch(err=>{
+                console.log(err.message);
+        });
+});
+app.post('/verifyotp', function(req, res, next){
+        let o = {
+                member_id:req.body.username,
+        }
+        fetch(global.verifyotp, {
                 method:'POST',
                 headers: {'Content-Type': 'application/json'},
                 body:JSON.stringify(o),

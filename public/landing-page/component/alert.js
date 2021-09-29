@@ -18,6 +18,8 @@ Cakes.create('alert', null, {
                     title:'Error',
                     message:e || 'An error occured',
                     icon:'error',
+                }).then(()=>{
+                    location.reload();
                 });
             },
         },
