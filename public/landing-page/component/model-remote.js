@@ -38,7 +38,7 @@ Cakes.create('model-remote', null, {
                 } else {
                     this.fire('spinnerDestroy');
                     this.fire('alertError', r.message);
-                }
+                };
             });
         },
         verifyotp(data){
