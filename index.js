@@ -132,6 +132,22 @@ app.use('/logout',require('./router/get-token'),function(req, res, next){
         });
 });
  
+app.post('/sendotp', function(req, res, next){
+        let o = {
+                member_id:req.body.username,
+        }
+        fetch(global.sendotp, {
+                method:'POST',
+                headers: {'Content-Type': 'application/json'},
+                body:JSON.stringify(o),
+        }).then(r=>{
+                return r.json();
+        }).then(r=>{
+                res.json(r);
+        }).catch(err=>{
+                console.log(err.message);
+        });
+});
 
 app.post('/stat', function(req, res, next){
         // console.log(req.body);

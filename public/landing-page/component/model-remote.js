@@ -26,12 +26,32 @@ Cakes.create('model-remote', null, {
                 // location.replace(`${location.origin}/user`); 
                 location.replace(location.origin);
             });
+        },
+        sendotp(data){
+            this.fire('spinnerRender');
+            this.utils.post('/sendotp', {body:data}).then(r=>{
+                // location.replace(`${location.origin}/user`);
+                return r.json();
+            }).then(r=>{
+                this.fire('renderOtpVerify', {payload:data, response:r});
+            });
+        },
+        verifyotp(o){
+            
         }
     },
     subscribe:{
         'login-form':{
             submit(e){ 
                 this.fire.login(e);
+            },
+            sendotp(obj){
+                this.fire.sendotp(obj);
+            }
+        },
+        'login-form-otp':{
+            submit(e){
+                this.fire.verifyotp(e);
             }
         }
     },

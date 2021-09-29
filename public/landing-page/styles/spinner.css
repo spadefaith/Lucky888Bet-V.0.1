@@ -1,0 +1,42 @@
+.wobbling-3{
+    width:20px;
+    height:20px;
+    animation: w3-0 2s linear infinite;
+  }
+  .wobbling-3::before,
+  .wobbling-3::after {
+    content: "";
+    position:absolute;
+    inset:0;
+    border-radius:50%;
+    background:radial-gradient(at 30% 30%,#0000,#000a) red;
+    animation: w3-1 0.5s cubic-bezier(.5,-500,.5,500) infinite;
+  }
+  .wobbling-3::after {
+    animation-delay: -0.15s;
+  }
+  
+  @keyframes w3-0 { 
+    100% { transform:rotate(360deg)} 
+  }
+  @keyframes w3-1 { 
+    100% { transform:translate(0.5px)} 
+  }
+  
+
+.spinner-container{
+  position: fixed;
+  right: 0;
+  top:0;
+  bottom:0;
+  left:0;
+  display:grid;
+  justify-content:center;
+  align-content:center;
+  z-index: 100000000;
+  background-color: rgba(254,254,254,0.7);
+}
+
+.spinner-container .spinner-content{
+  position: relative;
+}

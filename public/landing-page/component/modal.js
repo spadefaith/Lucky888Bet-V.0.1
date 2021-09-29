@@ -8,7 +8,13 @@ Cakes.create('modal', '#modal', {
         isConnected(e){
             let {element, emit:{trigger}} = e;
             let fn = this.utils.createFn('render'+trigger);
-            this.fire('render'+trigger);
+            if (trigger.includes('frame')){
+
+                this.fire('render-'+trigger, trigger);
+            } else {
+
+                this.fire('render'+trigger, trigger);
+            }
         },
     },
     subscribe:{
@@ -16,6 +22,12 @@ Cakes.create('modal', '#modal', {
             components:['header'],
             handler(e){
                 this.render({hashed:true, emit:{trigger:e}});
+            },
+        },
+        renderFrame:{
+            components:['header'],
+            handler(e){
+                this.render({hashed:true, emit:{trigger:`${e}-frame`}});
             },
         },
         renderLogin:{

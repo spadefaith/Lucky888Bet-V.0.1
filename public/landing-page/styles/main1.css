@@ -1819,3 +1819,11 @@ body{
 .modal .modal-content .head p:nth-child(3){
     margin-bottom: 1.5rem;
 }
+iframe{
+    width: 100%;
+    height: 100%;
+}
+.modal-content.frame{
+    width: 90%;
+    height: 90%;
+}

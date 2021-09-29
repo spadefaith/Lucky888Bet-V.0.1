@@ -23,6 +23,10 @@ Cakes.create('header', '#header', {
         },
         login(e){
             this.fire('renderLogin', 'login')
+            // this.fire('renderFrame', 'login')
+        },
+        signup(e){
+            this.fire('renderFrame', 'signup')
         },
         chooseLang(e){
             this.toggler('lang');

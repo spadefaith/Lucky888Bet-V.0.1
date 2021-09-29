@@ -110,9 +110,11 @@
     <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css' rel='stylesheet'>
 
     <link rel='stylesheet' href='./styles/main1.css'>
+    <link rel='stylesheet' href='./styles/spinner.css'>
 
     <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=27475616-9fe3-47a6-aaa2-e106f0f7d033"> </script>
     <script src='/asset/cfg.js'></script>
+
 </head>
 <body>
     <div class='loader-container'>
@@ -147,7 +149,7 @@
                     <div>
                         <img src='./images/pagcor-header.png'>
                         <img src='./images/age-restrict-header.png'>
-                        <a class='button is-default is-medium' data-role='sign-up' href=`${cfg.signup}`>Sign Up</a>
+                        <a class='button is-default is-medium' data-role='sign-up' data-event='click:signup'>Sign Up</a>
                         <a class='button is-success is-medium' data-role='login' data-event='click:login'>Log In</a>
                     </div>
                     <div>
@@ -573,6 +575,14 @@
             </div>
     </template>
 
+    <template id='frame'>
+        <!-- <iframe data-bind='src:game_path' width=800px height=800px style='border:1px solid yellow'></iframe> -->
+        <iframe referrerpolicy="strict-origin-when-cross-origin" allow-same-origin=true allow-scripts=true allowfullscreen=true src={{src}}></iframe>
+        <!-- <iframe src='https://3.133.4.140/games/e-bingo/fortune30' allowfullscreen=true></iframe> -->
+    </template>
+
+    
+
 
     <template id='carousel'>
         <div class='carousel-content'>
@@ -600,16 +610,6 @@
         </div>
     </template>
 
-    <template id='spinner'>
-        <style>
-            #dots-container{
-                z-index: 1000;
-            }
-        </style>
-        <div id=dots-container data-animate='render:appear, remove:disappear' data-event='click:destroy'>
-            <div class="dots-4"></div>
-        </div>
-    </template>
 
     <template id='toolbar'>
         <div class="tabs is-toggle is-right" data-animate='ns:toolbar'>
@@ -708,7 +708,7 @@
                 <p>Play your favorite online games whenever you are.</p>
                 <p></p>
             </div>
-            <form data-event='submit'>
+            <form data-event='submit:sendotp'>
                 <div class="field">
                   <label class="label">Username</label>
                   <div class="control has-icons-left has-icons-right">
@@ -750,6 +750,56 @@
 
     </template>
 
+    <template id='spinner'>
+        <div class='spinner-container'>
+            <div class='spinner-content'>
+                <div class="wobbling-3"></div>
+            </div>
+        </div>
+    </template>
+
+    <template id='login-otp'>
+        <div class='box content'>
+            <div class='head'>
+                <p>Welcome to</p>
+                <img src='./images/logo-header.png'>
+                <p>Play your favorite online games whenever you are.</p>
+                <p>
+                    We Sent the 6-digit authentication
+                    code to your number &nbsp<span data-bind='textContent:number'></span>
+                </p>
+            </div>
+            <form data-event='submit'>
+                <h3 class='is-title is-3' data-bind='textContent:username'></h3>
+                <div class="field">
+                  <label class="label">OTP Code</label>
+                  <div class="control has-icons-left has-icons-right">
+                    <input class="input" name='otp' type="text" placeholder="_ _ _ _ _ _ _ _">
+                    <span class="icon is-small is-left">
+                      <i class="fa fa-unlock"></i>
+                    </span>
+                    <span class="icon is-small is-right">
+                      <i class="fas fa-check"></i>
+                    </span>
+                  </div>
+                  <!-- <p class="help is-success">This username is available</p> -->
+                </div>
+      
+                <div class="field is-grouped mt-5">
+                  <div class="control">
+                    <button class="button is-success">Submit</button>
+                  </div>
+                </div>
+                <p>
+                    Code is valid only 5 minutes from the date and time requested;
+                </p>
+                <p>
+                    <span>SMS reference ID:</span>&nbsp<span data-bind='textContent:reference'></span>
+                </p>
+          </form>
+        </div>
+
+    </template>
 
     <template id='form.sign-up'>
         <section class='login-form'>
@@ -770,14 +820,18 @@
         </section>
     </template>
 
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src='https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.21/dist/js/splide.min.js'></script>
 
     <script src='/asset/bundled.js'></script>
 
     <script src='component/bundle.js'></script>
     <script src='component/modal.js'></script>
+    <script src='component/frame.js'></script>
     <script src='component/category.js'></script>
+    <script src='component/spinner.js'></script>
+    <script src='component/alert.js'></script>
+    <script src='component/login-form-otp.js'></script>
     <script src='component/login-form.js'></script>
     <script src='component/header.js'></script>
     <script src='component/model-remote.js'></script>
