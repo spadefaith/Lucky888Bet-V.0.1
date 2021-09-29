@@ -12,7 +12,7 @@
     };
 
     Object.assign(global.cfg, {
-        login:'https://qa.bingorepublic.com.ph/login',
+        login:'https://qa.bingorepublic.com.ph/oauth/authorize?client_id=5&redirect_uri=https://lucky888bet.herokuapp.com/login-callback&response_type=code&scope&state=asdfasdfasdfasdfasdfasdfasdfasdfasdfasdf',
         signup:'https://qa.bingorepublic.com.ph/registration',
         deposit:'https://qa.bingorepublic.com.ph/player/deposit',
     });
