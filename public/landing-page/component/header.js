@@ -22,8 +22,8 @@ Cakes.create('header', '#header', {
             } ;
         },
         login(e){
-            this.fire('renderLogin', 'login')
-            // this.fire('renderFrame', 'login')
+            // this.fire('renderLogin', 'login')
+            this.fire('renderFrame', 'login')
         },
         signup(e){
             this.fire('renderFrame', 'signup')
