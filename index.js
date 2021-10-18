@@ -170,6 +170,9 @@ app.post('/stat', function(req, res, next){
 
 app.use('/asset', require('./asset'));
 
+app.get('/login-callback', function(req, res, next){
+        console.log(req.body);
+});
 
 
 app.listen(port, '0.0.0.0',function(err){
