@@ -156,6 +156,7 @@ app.post('/verifyotp', function(req, res, next){
         }).then(r=>{
                 return r.json();
         }).then(r=>{
+                console.log(r);
                 res.json(r);
         }).catch(err=>{
                 console.log(err.message);
